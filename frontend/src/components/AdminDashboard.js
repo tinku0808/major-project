@@ -106,7 +106,7 @@
 // export default AdminDashboard;
 
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 
 const AdminDashboard = () => {
@@ -168,9 +168,25 @@ const AdminDashboard = () => {
 
     return (
         <div className="container mt-5">
+            {/* Navigation Bar */}
+            <nav className="navbar navbar-expand-lg navbar-light bg-light mb-4">
+                <Link className="navbar-brand" to="/admin-dashboard">Admin Dashboard</Link>
+                <div className="collapse navbar-collapse">
+                    <ul className="navbar-nav mr-auto">
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/admin-dashboard">Create Employees</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/admin-dashboard/create-learning-material">Create Learning Material</Link>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            {/* Employee Creation Form */}
             <div className="row">
                 <div className="col-md-8 offset-md-2">
-                    <h3 className="text-center">Admin Dashboard</h3>
+                    <h3 className="text-center">Create Employee</h3>
                     <form onSubmit={createEmployee}>
                         <div className="form-group">
                             <label>Name</label>
@@ -231,6 +247,8 @@ const AdminDashboard = () => {
                             Create Employee
                         </button>
                     </form>
+
+                    {/* Logout Button */}
                     <button onClick={handleLogout} className="btn btn-danger btn-block mt-3">
                         Logout
                     </button>

@@ -5,6 +5,7 @@ const cors = require("cors");
 const bcrypt = require("bcrypt");
 const User = require("./models/User");
 const authRoutes = require("./routes/authRoutes");
+const learningMaterialRoutes = require("./routes/learningMaterialRoutes");
 
 dotenv.config();
 
@@ -15,6 +16,8 @@ app.use(express.json());
 
 // Routes
 app.use("/api", authRoutes);
+app.use("/api/admin", learningMaterialRoutes);
+
 
 // Function to seed admin user
 const createAdminUser = async () => {
