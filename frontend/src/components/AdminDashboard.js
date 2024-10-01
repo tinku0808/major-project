@@ -152,8 +152,6 @@
 // };
 
 // export default AdminDashboard;
-
-
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
@@ -161,7 +159,6 @@ import axios from "axios";
 const AdminDashboard = () => {
     const [view, setView] = useState("createEmployee");
     const [learningMaterials, setLearningMaterials] = useState([]);
-
     const [employeeData, setEmployeeData] = useState({
         name: "",
         email: "",
@@ -172,8 +169,8 @@ const AdminDashboard = () => {
 
     const navigate = useNavigate();
 
-    // Handle input change
-    const handleChange = (e) => {
+    // Handle employee input change
+    const handleEmployeeChange = (e) => {
         setEmployeeData({
             ...employeeData,
             [e.target.name]: e.target.value,
@@ -247,8 +244,8 @@ const AdminDashboard = () => {
                         <button className="nav-link btn" onClick={() => setView("createEmployee")}>Create Employees</button>
                     </li>
                     <li className="nav-item">
-                             <Link className="nav-link" to="/admin-dashboard/create-learning-material">Create Learning Material</Link>
-                      </li>
+                        <Link className="nav-link" to="/admin-dashboard/create-learning-material">Create Learning Material</Link>
+                    </li>
                     <li className="nav-item">
                         <button className="nav-link btn" onClick={() => setView("learningMaterials")}>Available Learning Materials</button>
                     </li>
@@ -262,23 +259,23 @@ const AdminDashboard = () => {
                         <form onSubmit={createEmployee}>
                             <div className="form-group">
                                 <label>Name</label>
-                                <input type="text" name="name" className="form-control" value={employeeData.name} onChange={handleChange} required />
+                                <input type="text" name="name" className="form-control" value={employeeData.name} onChange={handleEmployeeChange} required />
                             </div>
                             <div className="form-group">
                                 <label>Email</label>
-                                <input type="email" name="email" className="form-control" value={employeeData.email} onChange={handleChange} required />
+                                <input type="email" name="email" className="form-control" value={employeeData.email} onChange={handleEmployeeChange} required />
                             </div>
                             <div className="form-group">
                                 <label>Password</label>
-                                <input type="password" name="password" className="form-control" value={employeeData.password} onChange={handleChange} required />
+                                <input type="password" name="password" className="form-control" value={employeeData.password} onChange={handleEmployeeChange} required />
                             </div>
                             <div className="form-group">
                                 <label>Team</label>
-                                <input type="text" name="team" className="form-control" value={employeeData.team} onChange={handleChange} required />
+                                <input type="text" name="team" className="form-control" value={employeeData.team} onChange={handleEmployeeChange} required />
                             </div>
                             <div className="form-group">
                                 <label>Department</label>
-                                <input type="text" name="department" className="form-control" value={employeeData.department} onChange={handleChange} required />
+                                <input type="text" name="department" className="form-control" value={employeeData.department} onChange={handleEmployeeChange} required />
                             </div>
                             <button type="submit" className="btn btn-primary btn-block mt-3">Create Employee</button>
                         </form>
@@ -296,7 +293,7 @@ const AdminDashboard = () => {
                                     {material.title}
                                     <button
                                         className="btn btn-secondary"
-                                        onClick={() => navigate(`/admin-dashboard/quiz/${material._id}`)}
+                                        onClick={() => navigate(`/admin-dashboard/quiz/create/${material._id}`)}
                                     >
                                         Create Quiz
                                     </button>
@@ -313,3 +310,9 @@ const AdminDashboard = () => {
 };
 
 export default AdminDashboard;
+
+
+
+
+
+

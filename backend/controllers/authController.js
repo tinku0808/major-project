@@ -58,7 +58,7 @@ exports.login = async (req, res) => {
         // Check password
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) return res.status(400).json({ msg: "Invalid credentials" });
-
+        console.log(user)
         // Create JWT Token
         const payload = {
             user: {
@@ -69,7 +69,7 @@ exports.login = async (req, res) => {
 
         // Sign the token with secret and send it to the client
         const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: "1h" });
-        res.status(200).json({ token, role: user.role });
+        res.status(200).json({ employeeId: user.employeeId,token, role: user.role });
     } catch (err) {
         console.error(err);
         res.status(500).json({ msg: "Server error" });

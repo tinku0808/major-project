@@ -6,7 +6,7 @@ const bcrypt = require("bcrypt");
 const User = require("./models/User");
 const authRoutes = require("./routes/authRoutes");
 const learningMaterialRoutes = require("./routes/learningMaterialRoutes");
-
+const quizRoutes = require("./routes/quizRoutes");
 dotenv.config();
 
 const app = express();
@@ -17,6 +17,7 @@ app.use(express.json());
 // Routes
 app.use("/api", authRoutes);
 app.use("/api/admin", learningMaterialRoutes);
+app.use("/api/quiz", quizRoutes);
 
 
 // Function to seed admin user

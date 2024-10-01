@@ -27,4 +27,29 @@ const createLearningMaterial = async (req, res) => {
     }
 };
 
-module.exports = { createLearningMaterial };
+// Controller to get all learning materials
+const getAllLearningMaterials = async (req, res) => {
+    try {
+        const learningMaterials = await LearningMaterial.find();
+        res.status(200).json(learningMaterials);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ msg: "Failed to fetch learning materials" });
+    }
+};
+
+const getLearningMaterialById = async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const material = await LearningMaterial.findById(id);
+        if (!material) {
+            return res.status(404).json({ message: "Learning material not found" });
+        }
+        res.status(200).json(material);
+    } catch (error) {
+        res.status(500).json({ message: "Error fetching learning material", error });
+    }
+};
+
+module.exports = { createLearningMaterial, getAllLearningMaterials,getLearningMaterialById };

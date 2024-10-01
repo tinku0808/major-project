@@ -32,4 +32,5 @@ const LearningMaterialSchema = new mongoose.Schema({
     },
 });
 
+
 module.exports = mongoose.model("LearningMaterial", LearningMaterialSchema);

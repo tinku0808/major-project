@@ -94,7 +94,11 @@ const Login = () => {
         e.preventDefault();
         try {
             const response = await axios.post("http://localhost:5000/api/login", { email, password });
-    
+            console.log(response)
+            const employeeId = response.data.employeeId;
+           
+            localStorage.setItem("employeeId", employeeId);
+        
             // Save JWT token to localStorage
             localStorage.setItem("token", response.data.token);
     
