@@ -1,4 +1,6 @@
 // controllers/quizController.js
+const mongoose = require('mongoose');
+
 const Quiz = require("../models/Quiz");
 const LearningMaterial = require("../models/LearningMaterial");
 const Score = require("../models/Score");
@@ -30,7 +32,7 @@ exports.createQuiz = async (req, res) => {
 // Fetch Quiz by ID
 exports.getQuizByLearningMaterialId = async (req, res) => {
     const { learningMaterialId } = req.params;
-
+    console.log("Learning Material ID:", learningMaterialId); 
     try {
         // Find the quiz that is associated with the given learning material ID
         const quiz = await Quiz.findOne({ learningMaterial: learningMaterialId });

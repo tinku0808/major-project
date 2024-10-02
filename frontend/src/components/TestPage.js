@@ -59,7 +59,7 @@ const TestPage = () => {
             });
 
             alert(`Your score is: ${response.data.score}`);
-            navigate("/employee/dashboard"); // Redirect back to the employee dashboard
+            navigate("/employee-dashboard"); // Redirect back to the employee dashboard
         } catch (error) {
             console.error("Error submitting quiz:", error);
             alert("Failed to submit quiz. Please try again.");

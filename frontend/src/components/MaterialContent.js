@@ -112,8 +112,7 @@ const MaterialContent = () => {
         };
 
         fetchMaterialContent();
-        fetchQuizId();
-    }, [id,quizId]);
+    }, [id]); // Only run when the material ID changes
 
     // Fetch the quiz ID for the given material ID
     const fetchQuizId = async (materialId) => {
@@ -141,15 +140,13 @@ const MaterialContent = () => {
     };
 
     // Handle test button click
-    const handleTestClick = async() => {
+    const handleTestClick = async () => {
         if (quizId) {
             navigate(`/employee/test/${quizId}`);
-             // Navigate to test page with quiz ID
+            // Navigate to test page with quiz ID
         } else {
             alert("No quiz available for this material");
         }
-        const response = await axios.get(`http://localhost:5000/api/quiz/${quizId}/questions`);
-            console.log(response.data.questions); // Log the questions or handle them as needed
     };
 
     // Handle completion
@@ -185,4 +182,5 @@ const MaterialContent = () => {
 };
 
 export default MaterialContent;
+
 
