@@ -50,45 +50,39 @@ exports.getQuizByLearningMaterialId = async (req, res) => {
 };
 // Submit quiz answers and allocate scores
 exports.submitQuiz = async (req, res) => {
-    const { employeeId, quizId, answers } = req.body;
+    const { employeeId, quizId, answers, totalTimeSpent } = req.body;
 
     try {
-        console.log(employeeId, quizId, answers)
         const quiz = await Quiz.findById(quizId);
-        console.log(quiz)
         if (!quiz) return res.status(404).json({ message: "Quiz not found" });
 
         let score = 0;
 
         quiz.questions.forEach((question, index) => {
-            question.options.forEach((optionText,index) => {
-                if (optionText.optionText === answers[index]) {
-                    score++;
-                }
-            })
-
+            const correctOption = question.options.find(option => option.isCorrect); // Find the correct option
+            if (correctOption && correctOption.optionText === answers[index]) {
+                score++; // Increment score if the answer matches the correct option
+            }
         });
-        try{
-            console.log(score)
-        // Save score to the Scores model
+
+        // Save score and timeSpent to the Scores model
         const newScore = new Score({
             employeeId,
             quizId,
             score: parseInt(score),
+            timeSpent: totalTimeSpent, // Save time spent
             date: new Date(),
         });
-        console.log(newScore)
-        
+
         await newScore.save();
-        }catch(error){
-            console.log("Error saving score",error);
-        }
 
         res.status(200).json({ score });
     } catch (error) {
         res.status(500).json({ message: "Error submitting quiz", error });
     }
 };
+
+
 exports.getQuestionsByQuizId = async (req, res) => {
     const { quizId } = req.params;
     console.log(quizId)
