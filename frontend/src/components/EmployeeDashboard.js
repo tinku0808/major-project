@@ -4,20 +4,22 @@
 
 // const EmployeeDashboard = () => {
 //     const [learningMaterials, setLearningMaterials] = useState([]);
-//     const [selectedMaterial, setSelectedMaterial] = useState(null);
-//     const [timeSpent, setTimeSpent] = useState(0);
 //     const navigate = useNavigate();
 
 //     // Fetch learning materials
 //     useEffect(() => {
 //         const fetchLearningMaterials = async () => {
 //             const token = localStorage.getItem("token");
-//             const response = await axios.get("http://localhost:5000/api/admin/learning-materials", {
-//                 headers: {
-//                     Authorization: `Bearer ${token}`,
-//                 },
-//             });
-//             setLearningMaterials(response.data);
+//             try {
+//                 const response = await axios.get("http://localhost:5000/api/admin/learning-materials", {
+//                     headers: {
+//                         Authorization: `Bearer ${token}`,
+//                     },
+//                 });
+//                 setLearningMaterials(response.data);
+//             } catch (error) {
+//                 console.error("Error fetching learning materials:", error);
+//             }
 //         };
 //         fetchLearningMaterials();
 //     }, []);
@@ -28,28 +30,9 @@
 //         navigate("/"); // Redirect to login page
 //     };
 
-//     // Handle material selection
-//     const handleMaterialClick = (material) => {
-//         setSelectedMaterial(material);
-//         setTimeSpent(0); // Reset time spent
-//         startTimer(); // Start tracking time
-//     };
-
-//     // Start timer for time spent on learning material
-//     const startTimer = () => {
-//         const startTime = Date.now();
-//         const timer = setInterval(() => {
-//             setTimeSpent(Math.floor((Date.now() - startTime) / 1000)); // Time in seconds
-//         }, 1000);
-
-//         // Clear timer when the component is unmounted
-//         return () => clearInterval(timer);
-//     };
-
-//     // Handle test button click
-//     const handleTestClick = () => {
-//         // Implement test logic here
-//         navigate(`/employee/test/${selectedMaterial._id}`); // Redirect to test page
+//     // Handle material click
+//     const handleMaterialClick = (materialId) => {
+//         navigate(`/employee/material/${materialId}`); // Navigate to MaterialContent page
 //     };
 
 //     return (
@@ -67,40 +50,13 @@
 //                         <li
 //                             key={material._id}
 //                             className="list-group-item"
-//                             onClick={() => handleMaterialClick(material)}
+//                             onClick={() => handleMaterialClick(material._id)} // Pass the material ID
 //                         >
 //                             {material.title}
 //                         </li>
 //                     ))}
 //                 </ul>
 //             </nav>
-
-//             {selectedMaterial && (
-//                 <div className="mt-4">
-//                     <h4>{selectedMaterial.title}</h4>
-//                     <p>{selectedMaterial.description}</p>
-//                     <h5>Content:</h5>
-//                     {selectedMaterial.modules.map((module, index) => (
-//                         <div key={index}>
-//                             <h6>{module.title}</h6>
-//                             <p>{module.content}</p>
-//                         </div>
-//                     ))}
-//                     <p>Time Spent: {timeSpent} seconds</p>
-//                     <button className="btn btn-primary" onClick={handleTestClick}>
-//                         Take Test
-//                     </button>
-//                     <button
-//                         className="btn btn-success"
-//                         onClick={() => {
-//                             // Mark as completed logic here
-//                             alert("Learning material completed!");
-//                         }}
-//                     >
-//                         Mark as Completed
-//                     </button>
-//                 </div>
-//             )}
 //         </div>
 //     );
 // };
@@ -114,6 +70,8 @@ import axios from "axios";
 
 const EmployeeDashboard = () => {
     const [learningMaterials, setLearningMaterials] = useState([]);
+    const [scores, setScores] = useState([]);
+    const [activeTab, setActiveTab] = useState("learning");
     const navigate = useNavigate();
 
     // Fetch learning materials
@@ -134,15 +92,36 @@ const EmployeeDashboard = () => {
         fetchLearningMaterials();
     }, []);
 
+    // Fetch employee's quiz scores
+    useEffect(() => {
+        const fetchScores = async () => {
+            const employeeId = localStorage.getItem("employeeId");
+            const token = localStorage.getItem("token");
+
+            try {
+                const response = await axios.get(`http://localhost:5000/api/employee/scores/${employeeId}`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                });
+                setScores(response.data);
+            } catch (error) {
+                console.error("Error fetching scores:", error);
+            }
+        };
+
+        fetchScores();
+    }, []);
+
     // Logout function
     const handleLogout = () => {
         localStorage.removeItem("token");
-        navigate("/"); // Redirect to login page
+        navigate("/");
     };
 
     // Handle material click
     const handleMaterialClick = (materialId) => {
-        navigate(`/employee/material/${materialId}`); // Navigate to MaterialContent page
+        navigate(`/employee/material/${materialId}`);
     };
 
     return (
@@ -153,22 +132,79 @@ const EmployeeDashboard = () => {
                 Logout
             </button>
 
-            <nav className="mt-4">
-                <h3>Available Learning Materials</h3>
-                <ul className="list-group">
-                    {learningMaterials.map((material) => (
-                        <li
-                            key={material._id}
-                            className="list-group-item"
-                            onClick={() => handleMaterialClick(material._id)} // Pass the material ID
-                        >
-                            {material.title}
+            {/* Navbar */}
+            <nav className="navbar navbar-expand-lg navbar-light bg-light mt-4">
+                <span className="navbar-brand">Dashboard</span>
+                <div className="collapse navbar-collapse" id="navbarNav">
+                    <ul className="navbar-nav">
+                        <li className={`nav-item ${activeTab === "learning" ? "active" : ""}`}>
+                            <button
+                                className="btn nav-link"
+                                onClick={() => setActiveTab("learning")}
+                            >
+                                Available Learning Materials
+                            </button>
                         </li>
-                    ))}
-                </ul>
+                        <li className={`nav-item ${activeTab === "engagement" ? "active" : ""}`}>
+                            <button
+                                className="btn nav-link"
+                                onClick={() => setActiveTab("engagement")}
+                            >
+                                Engagement
+                            </button>
+                        </li>
+                    </ul>
+                </div>
             </nav>
+
+            {/* Conditional rendering based on active tab */}
+            {activeTab === "learning" && (
+                <section className="mt-4">
+                    <h3>Available Learning Materials</h3>
+                    <ul className="list-group">
+                        {learningMaterials.map((material) => (
+                            <li
+                                key={material._id}
+                                className="list-group-item"
+                                onClick={() => handleMaterialClick(material._id)}
+                            >
+                                {material.title}
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+            )}
+
+            {activeTab === "engagement" && (
+                <section className="mt-4">
+                    <h3>Engagement</h3>
+                    {scores.length > 0 ? (
+                        <table className="table">
+                            <thead>
+                                <tr>
+                                    <th>Learning Material</th>
+                                    <th>Score</th>
+                                    <th>Time Spent (minutes)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {scores.map((score, index) => (
+                                    <tr key={index}>
+                                        <td>{score.learningMaterialTitle}</td>
+                                        <td>{score.score}</td>
+                                        <td>{score.timeSpent}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    ) : (
+                        <p>No scores available yet.</p>
+                    )}
+                </section>
+            )}
         </div>
     );
 };
 
 export default EmployeeDashboard;
+

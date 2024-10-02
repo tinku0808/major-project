@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import Quiz from "./Quiz"; // Ensure this path is correct
 
 const TestPage = () => {
     const { quizId } = useParams(); // Get the quiz ID from the URL
+    const location = useLocation(); // Use this to access the query params
     const [quiz, setQuiz] = useState(null);
     const [answers, setAnswers] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -16,8 +17,12 @@ const TestPage = () => {
     useEffect(() => {
         const fetchQuiz = async () => {
             const token = localStorage.getItem("token");
-            const storedMaterialTime = localStorage.getItem("materialTimeSpent");
-            setMaterialTimeSpent(storedMaterialTime ? parseInt(storedMaterialTime) : 0); // Get the material time from localStorage
+
+            // Extract `timeSpent` from the query parameters
+            const queryParams = new URLSearchParams(location.search);
+            const storedMaterialTime = queryParams.get("timeSpent");
+
+            setMaterialTimeSpent(storedMaterialTime ? parseInt(storedMaterialTime) : 0); // Set material time
 
             try {
                 const response = await axios.get(`http://localhost:5000/api/quiz/${quizId}/questions`, {
@@ -36,7 +41,7 @@ const TestPage = () => {
         };
 
         fetchQuiz();
-    }, [quizId]);
+    }, [quizId, location.search]); // Add location.search to dependencies
 
     // Handle answer change
     const handleAnswerChange = (index, value) => {
