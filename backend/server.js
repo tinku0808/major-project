@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const bcrypt = require("bcrypt");
+const nodemailer = require("nodemailer"); // Add Nodemailer import
 const User = require("./models/User");
 const authRoutes = require("./routes/authRoutes");
 const learningMaterialRoutes = require("./routes/learningMaterialRoutes");
@@ -59,3 +60,5 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
+
