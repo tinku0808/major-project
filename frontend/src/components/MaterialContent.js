@@ -142,8 +142,7 @@ const MaterialContent = () => {
     // Handle test button click
     const handleTestClick = async () => {
         if (quizId) {
-            navigate(`/employee/test/${quizId}`);
-            // Navigate to test page with quiz ID
+            navigate(`/employee/test/${quizId}?timeSpent=${timeSpent}`); // Pass timeSpent to TestPage via URL
         } else {
             alert("No quiz available for this material");
         }

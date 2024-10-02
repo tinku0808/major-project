@@ -8,13 +8,17 @@ const TestPage = () => {
     const [quiz, setQuiz] = useState(null);
     const [answers, setAnswers] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [startTime, setStartTime] = useState(null); // Track starting time
+    const [startTime, setStartTime] = useState(null); // Track starting time for the test
+    const [materialTimeSpent, setMaterialTimeSpent] = useState(0); // Time spent on material
     const navigate = useNavigate();
 
-    // Fetch the quiz by ID
+    // Fetch the quiz by ID and track time
     useEffect(() => {
         const fetchQuiz = async () => {
             const token = localStorage.getItem("token");
+            const storedMaterialTime = localStorage.getItem("materialTimeSpent");
+            setMaterialTimeSpent(storedMaterialTime ? parseInt(storedMaterialTime) : 0); // Get the material time from localStorage
+
             try {
                 const response = await axios.get(`http://localhost:5000/api/quiz/${quizId}/questions`, {
                     headers: {
@@ -46,7 +50,8 @@ const TestPage = () => {
         e.preventDefault();
         const employeeId = localStorage.getItem("employeeId"); // Use the actual employee ID
         const endTime = Date.now(); // Getting end time
-        const totalTimeSpent = Math.floor((endTime - startTime) / 1000); // Calculate time spent in seconds
+        const totalTestTimeSpent = Math.floor((endTime - startTime) / 1000); // Time spent on test in seconds
+        const totalTimeSpent = materialTimeSpent + totalTestTimeSpent; // Add time spent on material and test
 
         try {
             const response = await axios.post(
@@ -55,7 +60,7 @@ const TestPage = () => {
                     employeeId,
                     quizId,
                     answers,
-                    totalTimeSpent, // Send total time spent to the server
+                    totalTimeSpent, // Send total time spent (material + test) to the server
                 },
                 {
                     headers: {
