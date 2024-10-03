@@ -1,3 +1,4 @@
+const nodemailer = require("nodemailer");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const User = require("../models/User");
@@ -31,6 +32,17 @@ exports.login = async (req, res) => {
         res.status(500).json({ msg: "Server error" });
     }
 };
+// Configure your email transporter (using Gmail as an example)
+
+const transporter = nodemailer.createTransport({
+    host: 'smtp.office365.com',
+    port: 587,
+    auth: {
+        user: 'sabareeshwaran.m@jmangroup.com',
+        pass: ''
+    }
+});
+
 exports.createEmployee = async (req, res) => {
     const { name, email, password, team, department } = req.body;
 
@@ -51,10 +63,60 @@ exports.createEmployee = async (req, res) => {
             role: "employee", // Automatically set role to employee
         });
 
-        await user.save();
-        res.status(201).json({ msg: "Employee created successfully" });
+        
+
+        // Prepare the email options
+        const mailOptions = {
+            from: "sabareeshwaran.m@jmangroup.com", // Sender address
+            to: email, // Recipient address
+            subject: "Welcome to the company", // Subject line
+            text: `Hi ${name},\n\nYour employee account has been successfully created!\n\n` +
+            `Team: ${team}\nDepartment: ${department}\n\n` +
+            `Your password is: ${password}\n\n` + // Include the password here
+            `Please log in to access your dashboard.\n\n` +
+            `Best regards,\nCompany Team`, // Plain text body
+        };
+        
+
+        // Send the email
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.error("Error sending email: ", error);
+            } else {
+                console.log("Email sent: " + info.response);
+            }
+        });
+
+        res.status(201).json({ msg: "Employee created successfully, email sent." });
     } catch (err) {
         console.error(err);
         res.status(500).json({ msg: "Server error" });
     }
 };
+// exports.createEmployee = async (req, res) => {
+//     const { name, email, password, team, department } = req.body;
+
+//     try {
+//         // Check if user already exists
+//         let user = await User.findOne({ email });
+//         if (user) {
+//             return res.status(400).json({ msg: "User already exists" });
+//         }
+
+//         // Create new user
+//         user = new User({
+//             name,
+//             email,
+//             password: await bcrypt.hash(password, 10), // Hash the password
+//             team,
+//             department,
+//             role: "employee", // Automatically set role to employee
+//         });
+
+//         await user.save();
+//         res.status(201).json({ msg: "Employee created successfully" });
+//     } catch (err) {
+//         console.error(err);
+//         res.status(500).json({ msg: "Server error" });
+//     }
+// };
