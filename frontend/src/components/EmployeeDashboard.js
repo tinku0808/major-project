@@ -63,7 +63,6 @@
 
 // export default EmployeeDashboard;
 
-
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -71,6 +70,7 @@ import axios from "axios";
 const EmployeeDashboard = () => {
     const [learningMaterials, setLearningMaterials] = useState([]);
     const [scores, setScores] = useState([]);
+    const [completedQuizzes, setCompletedQuizzes] = useState([]);
     const [activeTab, setActiveTab] = useState("learning");
     const navigate = useNavigate();
 
@@ -113,6 +113,27 @@ const EmployeeDashboard = () => {
         fetchScores();
     }, []);
 
+    // Fetch completed quizzes for the employee
+    useEffect(() => {
+        const fetchCompletedQuizzes = async () => {
+            const employeeId = localStorage.getItem("employeeId");
+            const token = localStorage.getItem("token");
+
+            try {
+                const response = await axios.get(`http://localhost:5000/api/employee/scores/employee/${employeeId}`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                });
+                setCompletedQuizzes(response.data);
+            } catch (error) {
+                console.error("Error fetching completed quizzes:", error);
+            }
+        };
+
+        fetchCompletedQuizzes();
+    }, []);
+
     // Logout function
     const handleLogout = () => {
         localStorage.removeItem("token");
@@ -122,6 +143,12 @@ const EmployeeDashboard = () => {
     // Handle material click
     const handleMaterialClick = (materialId) => {
         navigate(`/employee/material/${materialId}`);
+    };
+
+    // Function to check if the material is completed
+    const isMaterialCompleted = (materialId) => {
+        const completedScore = completedQuizzes.find((quiz) => quiz.quizId === materialId && quiz.completed);
+        return !!completedScore;
     };
 
     return (
@@ -167,6 +194,9 @@ const EmployeeDashboard = () => {
                                 key={material._id}
                                 className="list-group-item"
                                 onClick={() => handleMaterialClick(material._id)}
+                                style={{
+                                    textDecoration: isMaterialCompleted(material._id) ? 'line-through' : 'none',
+                                }}
                             >
                                 {material.title}
                             </li>
@@ -207,4 +237,3 @@ const EmployeeDashboard = () => {
 };
 
 export default EmployeeDashboard;
-
