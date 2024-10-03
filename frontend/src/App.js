@@ -8,6 +8,8 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import QuizPage from "./components/QuizPage";
 import MaterialContent from "./components/MaterialContent";
 import TestPage from "./components/TestPage";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const App = () => {
     return (

@@ -32,16 +32,14 @@ exports.login = async (req, res) => {
         res.status(500).json({ msg: "Server error" });
     }
 };
-// Configure your email transporter (using Gmail as an example)
-
 const transporter = nodemailer.createTransport({
-    host: 'smtp.office365.com',
-    port: 587,
+    host: "smtp.office365.com",
     auth: {
-        user: 'sabareeshwaran.m@jmangroup.com',
-        pass: ''
-    }
+        user: "sabareeshwaran.m@jmangroup.com", // Your email address
+        pass: "08082002Tinku", // Your email password or app password if using 2FA
+    },
 });
+
 
 exports.createEmployee = async (req, res) => {
     const { name, email, password, team, department } = req.body;
@@ -63,7 +61,7 @@ exports.createEmployee = async (req, res) => {
             role: "employee", // Automatically set role to employee
         });
 
-        
+        await user.save();
 
         // Prepare the email options
         const mailOptions = {
@@ -76,7 +74,6 @@ exports.createEmployee = async (req, res) => {
             `Please log in to access your dashboard.\n\n` +
             `Best regards,\nCompany Team`, // Plain text body
         };
-        
 
         // Send the email
         transporter.sendMail(mailOptions, (error, info) => {
@@ -93,30 +90,76 @@ exports.createEmployee = async (req, res) => {
         res.status(500).json({ msg: "Server error" });
     }
 };
-// exports.createEmployee = async (req, res) => {
-//     const { name, email, password, team, department } = req.body;
 
-//     try {
-//         // Check if user already exists
-//         let user = await User.findOne({ email });
-//         if (user) {
-//             return res.status(400).json({ msg: "User already exists" });
-//         }
+exports.getAllEmployees = async (req, res) => {
+    try {
+        const users = await User.find().select("-password"); // Exclude password from the response
+        res.status(200).json(users);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ msg: "Server error" });
+    }
+};
 
-//         // Create new user
-//         user = new User({
-//             name,
-//             email,
-//             password: await bcrypt.hash(password, 10), // Hash the password
-//             team,
-//             department,
-//             role: "employee", // Automatically set role to employee
-//         });
+exports.updateEmployee = async (req, res) => {
+    const { employeeId } = req.params; // Get employeeId from route params
+    const { name, email, password, team, department } = req.body;
 
-//         await user.save();
-//         res.status(201).json({ msg: "Employee created successfully" });
-//     } catch (err) {
-//         console.error(err);
-//         res.status(500).json({ msg: "Server error" });
-//     }
-// };
+    try {
+        // Validate that employeeId is a number
+        if (isNaN(employeeId)) {
+            return res.status(400).json({ message: 'Invalid employee ID format' });
+        }
+
+        // Find employee by employeeId
+        const user = await User.findOne({ employeeId: employeeId }); // Convert to number for the query
+        if (!user) {
+            return res.status(404).json({ msg: "Employee not found" });
+        }
+
+        // Update fields
+        user.name = name || user.name;
+        user.email = email || user.email;
+        user.team = team || user.team;
+        user.department = department || user.department;
+
+        // Update password if provided
+        if (password) {
+            user.password = await bcrypt.hash(password, 10);
+        }
+
+        await user.save();
+        res.status(200).json({ msg: "Employee updated successfully" });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ msg: "Server error" });
+    }
+};
+// Function to delete an employee
+// Example deleteEmployee function
+
+
+exports.deleteEmployee = async (req, res) => {
+    try {
+        const { employeeId } = req.params; // Get employeeId from request parameters
+        console.log('Attempting to delete employee with ID:', employeeId);
+
+        // Validate that employeeId is a number
+        if (isNaN(employeeId)) {
+            return res.status(400).json({ message: 'Invalid employee ID format' });
+        }
+
+        // Attempt to find and delete the user by employeeId
+        const result = await User.findOneAndDelete({ employeeId: employeeId }); // Convert to number for the query
+
+        // Check if the result is null, meaning no employee was found
+        if (!result) {
+            return res.status(404).json({ message: 'Employee not found' });
+        }
+
+        return res.status(200).json({ message: 'Employee deleted successfully' });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ message: 'Internal server error' });
+    }
+};

@@ -119,9 +119,14 @@ const CreateLearningMaterial = () => {
                     Add Module
                 </button>
 
-                <button type="submit" className="btn btn-primary btn-block mt-3">
+                <button type="submit" className="btn btn-primary btn-block mt-2">
                     Submit
                 </button>
+                <div>
+                <button type="button" className="btn btn-danger btn-block mt-3" onClick={() => window.history.back()}>
+                    Back
+                </button>
+                </div>
             </form>
         </div>
     );
