@@ -69,8 +69,8 @@ import axios from "axios";
 
 const EmployeeDashboard = () => {
     const [learningMaterials, setLearningMaterials] = useState([]);
-    const [scores, setScores] = useState([]);
     const [completedQuizzes, setCompletedQuizzes] = useState([]);
+    const [scores, setScores] = useState([]);
     const [activeTab, setActiveTab] = useState("learning");
     const navigate = useNavigate();
 
@@ -92,28 +92,7 @@ const EmployeeDashboard = () => {
         fetchLearningMaterials();
     }, []);
 
-    // Fetch employee's quiz scores
-    useEffect(() => {
-        const fetchScores = async () => {
-            const employeeId = localStorage.getItem("employeeId");
-            const token = localStorage.getItem("token");
-
-            try {
-                const response = await axios.get(`http://localhost:5000/api/employee/scores/${employeeId}`, {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
-                });
-                setScores(response.data);
-            } catch (error) {
-                console.error("Error fetching scores:", error);
-            }
-        };
-
-        fetchScores();
-    }, []);
-
-    // Fetch completed quizzes for the employee
+    // Fetch employee's completed quizzes
     useEffect(() => {
         const fetchCompletedQuizzes = async () => {
             const employeeId = localStorage.getItem("employeeId");
@@ -134,6 +113,27 @@ const EmployeeDashboard = () => {
         fetchCompletedQuizzes();
     }, []);
 
+    // Fetch employee's quiz scores and time spent
+    useEffect(() => {
+        const fetchScores = async () => {
+            const employeeId = localStorage.getItem("employeeId");
+            const token = localStorage.getItem("token");
+
+            try {
+                const response = await axios.get(`http://localhost:5000/api/employee/scores/${employeeId}`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                });
+                setScores(response.data);
+            } catch (error) {
+                console.error("Error fetching scores:", error);
+            }
+        };
+
+        fetchScores();
+    }, []);
+
     // Logout function
     const handleLogout = () => {
         localStorage.removeItem("token");
@@ -143,12 +143,6 @@ const EmployeeDashboard = () => {
     // Handle material click
     const handleMaterialClick = (materialId) => {
         navigate(`/employee/material/${materialId}`);
-    };
-
-    // Function to check if the material is completed
-    const isMaterialCompleted = (materialId) => {
-        const completedScore = completedQuizzes.find((quiz) => quiz.quizId === materialId && quiz.completed);
-        return !!completedScore;
     };
 
     return (
@@ -194,14 +188,40 @@ const EmployeeDashboard = () => {
                                 key={material._id}
                                 className="list-group-item"
                                 onClick={() => handleMaterialClick(material._id)}
-                                style={{
-                                    textDecoration: isMaterialCompleted(material._id) ? 'line-through' : 'none',
-                                }}
                             >
                                 {material.title}
                             </li>
                         ))}
                     </ul>
+
+                    {/* Completed Quizzes Table */}
+                    <section className="mt-4">
+                        <h4>Completed Quizzes</h4>
+                        {completedQuizzes.length > 0 ? (
+                            <table className="table table-striped">
+                                <thead>
+                                    <tr>
+                                        
+                                        <th>Title</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {completedQuizzes
+                                        .filter((quiz) => quiz.completed) // Only show completed quizzes
+                                        .map((quiz, index) => (
+                                            <tr key={index}>
+                                                {/* <td>{quiz.quizId}</td> */}
+                                                <td>{quiz.title}</td>
+                                                <td>Completed</td>
+                                            </tr>
+                                        ))}
+                                </tbody>
+                            </table>
+                        ) : (
+                            <p>No completed quizzes available.</p>
+                        )}
+                    </section>
                 </section>
             )}
 

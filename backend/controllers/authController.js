@@ -36,7 +36,7 @@ const transporter = nodemailer.createTransport({
     host: "smtp.office365.com",
     auth: {
         user: "sabareeshwaran.m@jmangroup.com", // Your email address
-        pass: "08082002Tinku", // Your email password or app password if using 2FA
+        pass: "", // Your email password or app password if using 2FA
     },
 });
 
