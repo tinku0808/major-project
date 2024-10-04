@@ -492,7 +492,7 @@ const AdminDashboard = () => {
     const fetchPerformanceData = async () => {
         const token = localStorage.getItem("token");
         try {
-            const res = await axios.get("http://localhost:5000/api/employee/scores", {
+            const res = await axios.get("http://localhost:5000/api/employee/buddhu/scores", {
                 headers: {
                     "x-auth-token": token,
                 },

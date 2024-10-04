@@ -42,44 +42,46 @@ router.get("/scores/:employeeId", async (req, res) => {
     }
 });
 
-router.get("/scores", async (req, res) => {
+router.get("/buddhu/scores", async (req, res) => {
     try {
-        // Find all scores and populate related quiz and learning material
+        // Step 1: Fetch all scores and populate related quiz and learning material
         const scores = await Score.find().populate({
             path: "quizId",
-            populate: { path: "learningMaterial", select: "title" }, // Populate learning material title
+            populate: { path: "learningMaterial", select: "title" }, // Populating learning material title
         });
 
         if (!scores.length) {
             return res.status(404).json({ message: "No scores found" });
         }
-       
-        // Get all distinct employeeIds from the scores
-        const employeeIds = [...new Set(scores.map((score) => score.employeeId))];
 
-        // Fetch employee details (names) for the employeeIds
+        // Step 2: Extract all unique employeeIds from the scores and ensure they are numbers
+        const employeeIds = [...new Set(scores.map(score => Number(score.employeeId)))];
+
+        // Step 3: Fetch employee details (names) for the extracted employeeIds
         const employees = await User.find({ employeeId: { $in: employeeIds } }, "employeeId name");
 
-        // Map employeeId to employeeName for easy lookup
+        // Step 4: Create a map of employeeId to employee name for easy lookup
         const employeeMap = employees.reduce((map, employee) => {
             map[employee.employeeId] = employee.name;
             return map;
         }, {});
 
-        // Format the response
+        // Step 5: Format the response by mapping over the scores
         const result = scores.map((score) => ({
-            employeeName: employeeMap[score.employeeId] || "N/A", // Fetch employee name or use "N/A" if not found
-            learningMaterialTitle: score.quizId.learningMaterial?.title || "N/A", // Handle missing quizId or learningMaterial
+            employeeName: employeeMap[Number(score.employeeId)] || "N/A", // Fetch employee name or use "N/A" if not found
+            learningMaterialTitle: score.quizId?.learningMaterial?.title || "N/A", // Handle missing quizId or learningMaterial
             score: score.score,
             timeSpent: score.timeSpent,
         }));
 
+        // Return the formatted response
         res.json(result);
     } catch (error) {
-        console.error("Error fetching all employee scores:", error);
+        console.error("Error fetching scores:", error);
         res.status(500).json({ message: "Internal server error" });
     }
 });
+
 
 router.get('/scores/employee/:id', async (req, res) => {
     const employeeId = req.params.id;
