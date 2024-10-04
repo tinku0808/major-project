@@ -11,6 +11,7 @@ import TestPage from "./components/TestPage";
 import FeedbackForm from "./components/FeedbackForm";
 import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import FeedbackList from "./components/FeedbackList";
 
 
 const App = () => {
@@ -78,6 +79,14 @@ const App = () => {
                     element={
                         <ProtectedRoute>
                             <FeedbackForm />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="admin-dashboard/feedback-list"
+                    element={
+                        <ProtectedRoute>
+                            <FeedbackList />
                         </ProtectedRoute>
                     }
                 />

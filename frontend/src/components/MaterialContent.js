@@ -149,10 +149,7 @@ const MaterialContent = () => {
     };
 
     // Handle completion
-    const handleCompletion = () => {
-        alert("Learning material completed!");
-        // You can implement further logic to update the completion status in the database
-    };
+   
 
     if (!material) {
         return <p>Loading...</p>; // Show a loading message while fetching the material
@@ -172,9 +169,6 @@ const MaterialContent = () => {
             <p>Time Spent: {timeSpent} seconds</p>
             <button className="btn btn-primary" onClick={handleTestClick}>
                 Take Test
-            </button>
-            <button className="btn btn-success" onClick={handleCompletion}>
-                Mark as Completed
             </button>
         </div>
     );

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import '../styles/FeedbackForm.css'; // Import the CSS file for styling
+import '../styles/FeedbackForm.css'; 
+import { useNavigate } from 'react-router-dom';// Import the CSS file for styling
 
 const FeedbackForm = () => {
+    const navigate = useNavigate(); 
     const [formData, setFormData] = useState({
         employeeId: '',
         learningMaterialTitle: '',
@@ -101,6 +103,9 @@ const FeedbackForm = () => {
                 </div>
                 <button type="submit" className="submit-button" onClick={() => window.history.back()}>Submit Feedback</button>
             </form>
+            <button className="back-button btn btn-danger btn-block mt-2" onClick={() => navigate(-1)}>
+                Back
+            </button>
         </div>
     );
 };

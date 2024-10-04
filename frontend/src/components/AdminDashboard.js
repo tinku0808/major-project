@@ -575,7 +575,9 @@ const AdminDashboard = () => {
     const indexOfLastEmployee = currentPage * 5;
     const indexOfFirstEmployee = indexOfLastEmployee - 5;
     const currentEmployees = employees.slice(indexOfFirstEmployee, indexOfLastEmployee);
+    
 
+    
     // Change page
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
@@ -605,9 +607,13 @@ const AdminDashboard = () => {
                     <li className="nav-item">
                         <button className="nav-link btn" onClick={() => setView("performance")}>Employee Performance</button>
                     </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/admin-dashboard/feedback-list">Feedback List</Link>
+                    </li>
                     <li className="nav-item ml-auto">
                         <button className="nav-link btn btn-danger" onClick={handleLogout}>Logout</button>
                     </li>
+                    
                 </ul>
             </nav>
 
@@ -676,7 +682,7 @@ const AdminDashboard = () => {
                                         <td>{employee.team}</td>
                                         <td>{employee.department}</td>
                                         <td>
-                                            <button className="btn btn-warning" onClick={() => handleEditClick(employee)}>Edit</button>
+                                            <button className="btn btn-warning" onClick={() => handleEditClick(employee)} style={{ marginRight: '10px' }}>Edit</button>
                                             <button className="btn btn-danger" onClick={() => deleteEmployee(employee.employeeId)}>Delete</button>
                                         </td>
                                     </tr>
@@ -757,6 +763,8 @@ const AdminDashboard = () => {
                                 ))}
                             </tbody>
                         </table>
+                        
+                        
                     </div>
                 </div>
             )}

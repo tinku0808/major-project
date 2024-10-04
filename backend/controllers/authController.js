@@ -100,6 +100,21 @@ exports.getAllEmployees = async (req, res) => {
         res.status(500).json({ msg: "Server error" });
     }
 };
+exports.getEmployeeById = async (req, res) => {
+    try {
+        const employeeId = req.params.employeeId; // Extract employeeId from request params
+        const user = await User.findOne({ employeeId }).select("-password"); // Exclude the password from the response
+
+        if (!user) {
+            return res.status(404).json({ msg: "Employee not found" });
+        }
+
+        res.status(200).json(user);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ msg: "Server error" });
+    }
+};
 
 exports.updateEmployee = async (req, res) => {
     const { employeeId } = req.params; // Get employeeId from route params
