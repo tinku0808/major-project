@@ -72,6 +72,8 @@ const learningMaterialRoutes = require("./routes/learningMaterialRoutes");
 const quizRoutes = require("./routes/quizRoutes");
 const scoreRoutes = require("./routes/scoreroutes");  // Import score routes
 const compileroutes = require("./routes/compileroutes");
+const feedbackRoutes = require("./routes/feedbackRoutes");
+
 
 dotenv.config();
 
@@ -86,6 +88,7 @@ app.use("/api/admin", learningMaterialRoutes);
 app.use("/api/quiz", quizRoutes);
 app.use("/api/employee", scoreRoutes);  // Use score routes for engagement data
 app.use("/api/material", compileroutes);
+app.use("/api/feedback", feedbackRoutes); 
 // Function to seed admin user /api/employee/scores/66fe8ffce858d540f6fd5f52
 const createAdminUser = async () => {
     const adminEmail = process.env.ADMIN_EMAIL;

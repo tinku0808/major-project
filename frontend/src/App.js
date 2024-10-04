@@ -8,6 +8,8 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import QuizPage from "./components/QuizPage";
 import MaterialContent from "./components/MaterialContent";
 import TestPage from "./components/TestPage";
+import FeedbackForm from "./components/FeedbackForm";
+import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -71,7 +73,16 @@ const App = () => {
                         </ProtectedRoute>
                     }
                 />
+                <Route
+                    path="/feedback"
+                    element={
+                        <ProtectedRoute>
+                            <FeedbackForm />
+                        </ProtectedRoute>
+                    }
+                />
             </Routes>
+            
         </Router>
     );
 };

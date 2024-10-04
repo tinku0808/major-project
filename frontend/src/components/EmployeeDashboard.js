@@ -174,6 +174,11 @@ const EmployeeDashboard = () => {
                                 Engagement
                             </button>
                         </li>
+                        <li className="nav-item">
+                            <button className="btn nav-link" onClick={() => navigate("/feedback")}>
+                                Feedback
+                            </button>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -196,7 +201,7 @@ const EmployeeDashboard = () => {
 
                     {/* Completed Quizzes Table */}
                     <section className="mt-4">
-                        <h4>Completed Quizzes</h4>
+                        <h4>Completed Learning Materials</h4>
                         {completedQuizzes.length > 0 ? (
                             <table className="table table-striped">
                                 <thead>
@@ -234,7 +239,7 @@ const EmployeeDashboard = () => {
                                 <tr>
                                     <th>Learning Material</th>
                                     <th>Score</th>
-                                    <th>Time Spent (minutes)</th>
+                                    <th>Time Spent (seconds)</th>
                                 </tr>
                             </thead>
                             <tbody>
