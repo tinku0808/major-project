@@ -415,9 +415,30 @@ const AdminDashboard = () => {
     const [searchQuery, setSearchQuery] = useState("");
     const [sortOrder, setSortOrder] = useState("score"); // Default sorting by score
     const [currentPage, setCurrentPage] = useState(1);
+    const [profilePic] = useState("https://i.imgur.com/SJae53b.jpeg");
+    const [employeeName, setEmployeeName] = useState(""); 
+    const employeeId = localStorage.getItem("employeeId"); 
 
     const navigate = useNavigate();
 
+
+    useEffect(() => {
+        const fetchEmployeeDetails = async () => {
+            const token = localStorage.getItem("token");
+            try {
+                const response = await axios.get(`http://localhost:5000/api/employee/${employeeId}`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                });
+                setEmployeeName(response.data.name);
+                // Removed profilePic fetching, now using hardcoded value
+            } catch (error) {
+                console.error("Error fetching employee details:", error);
+            }
+        };
+        fetchEmployeeDetails();
+    }, [employeeId]);
     // Handle employee input change
     const handleEmployeeChange = (e) => {
         setEmployeeData({
@@ -592,8 +613,25 @@ const AdminDashboard = () => {
 
     return (
         <div className="container mt-5">
+        <div className="profile-container text-center mt-3">
+                {/* Circular Profile Picture */}
+                <div className="profile-pic-wrapper">
+                    <img
+                        src={profilePic} // Now using hardcoded profile picture
+                        alt="Profile"
+                        className="profile-pic"
+                    />
+                </div>
+                {/* Welcome message */}
+                <h4>Welcome, {employeeName}!</h4>
+
+                {/* Logout Button */}
+                <button className="btn btn-danger mt-2 mb-4" onClick={handleLogout}>
+                    Logout
+                </button>
+            </div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light mb-4">
-                <Link className="navbar-brand" to="/admin-dashboard">Admin Dashboard</Link>
+                {/* <Link className="navbar-brand" to="/admin-dashboard">Admin Dashboard</Link> */}
                 <ul className="navbar-nav">
                     <li className="nav-item">
                         <button className="nav-link btn" onClick={() => setView("createEmployee")}>Create Employees</button>
@@ -610,10 +648,6 @@ const AdminDashboard = () => {
                     <li className="nav-item">
                         <Link className="nav-link" to="/admin-dashboard/feedback-list">Feedback List</Link>
                     </li>
-                    <li className="nav-item ml-auto">
-                        <button className="nav-link btn btn-danger" onClick={handleLogout}>Logout</button>
-                    </li>
-                    
                 </ul>
             </nav>
 

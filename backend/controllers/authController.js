@@ -36,7 +36,7 @@ const transporter = nodemailer.createTransport({
     host: "smtp.office365.com",
     auth: {
         user: "sabareeshwaran.m@jmangroup.com", // Your email address
-        pass: "", // Your email password or app password if using 2FA
+        pass: "08082002Tinku", // Your email password or app password if using 2FA
     },
 });
 
@@ -116,40 +116,100 @@ exports.getEmployeeById = async (req, res) => {
     }
 };
 
+// exports.updateEmployee = async (req, res) => {
+//     const { employeeId } = req.params; // Get employeeId from route params
+//     const { name, email, password, team, department } = req.body;
+
+//     try {
+//         // Validate that employeeId is a number
+//         if (isNaN(employeeId)) {
+//             return res.status(400).json({ message: 'Invalid employee ID format' });
+//         }
+
+//         // Find employee by employeeId
+//         const user = await User.findOne({ employeeId: employeeId }); // Convert to number for the query
+//         if (!user) {
+//             return res.status(404).json({ msg: "Employee not found" });
+//         }
+
+//         // Update fields
+//         user.name = name || user.name;
+//         user.email = email || user.email;
+//         user.team = team || user.team;
+//         user.department = department || user.department;
+
+//         // Update password if provided
+//         if (password) {
+//             user.password = await bcrypt.hash(password, 10);
+//         }
+
+//         await user.save();
+//         res.status(200).json({ msg: "Employee updated successfully" });
+//     } catch (err) {
+//         console.error(err);
+//         res.status(500).json({ msg: "Server error" });
+//     }
+// };
+
+
 exports.updateEmployee = async (req, res) => {
-    const { employeeId } = req.params; // Get employeeId from route params
+    const { employeeId } = req.params;
     const { name, email, password, team, department } = req.body;
 
     try {
-        // Validate that employeeId is a number
         if (isNaN(employeeId)) {
             return res.status(400).json({ message: 'Invalid employee ID format' });
         }
 
-        // Find employee by employeeId
-        const user = await User.findOne({ employeeId: employeeId }); // Convert to number for the query
+        const user = await User.findOne({ employeeId: Number(employeeId) });
         if (!user) {
             return res.status(404).json({ msg: "Employee not found" });
         }
 
-        // Update fields
+        let originalPassword;
+        if (password) {
+            originalPassword = password;
+            user.password = await bcrypt.hash(password, 10);
+        }
+
         user.name = name || user.name;
         user.email = email || user.email;
         user.team = team || user.team;
         user.department = department || user.department;
 
-        // Update password if provided
-        if (password) {
-            user.password = await bcrypt.hash(password, 10);
-        }
-
         await user.save();
+
+        // Send an email with updated details
+        const transporter = nodemailer.createTransport({
+            host: "smtp.office365.com",
+            auth: {
+                user: process.env.EMAIL_USER,  // Using environment variable
+                pass: process.env.EMAIL_PASS   // Using environment variable
+            }
+        });
+
+        const mailOptions = {
+            from: process.env.EMAIL_USER, // Using environment variable
+            to: user.email,
+            subject: 'Your Profile Has Been Updated',
+            text: `Dear ${user.name},\n\nYour profile has been updated successfully with the following details:\n\nName: ${user.name}\nEmail: ${user.email}\nTeam: ${user.team}\nDepartment: ${user.department}\nPassword: ${originalPassword || 'Unchanged'}\n\nIf you didn't request these changes, please contact support.\n\nBest regards,\nYour Company`
+        };
+
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.error('Error sending email:', error);
+            } else {
+                console.log('Email sent: ' + info.response);
+            }
+        });
+
         res.status(200).json({ msg: "Employee updated successfully" });
     } catch (err) {
         console.error(err);
         res.status(500).json({ msg: "Server error" });
     }
 };
+
 // Function to delete an employee
 // Example deleteEmployee function
 

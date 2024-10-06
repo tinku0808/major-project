@@ -251,46 +251,69 @@ const EmployeeDashboard = () => {
         fetchLearningMaterials();
     }, []);
 
-    // Fetch employee's completed quizzes
     useEffect(() => {
         const fetchCompletedQuizzes = async () => {
             const token = localStorage.getItem("token");
-
+    
             try {
                 const response = await axios.get(`http://localhost:5000/api/employee/scores/employee/${employeeId}`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
                 });
-                setCompletedQuizzes(response.data);
+    
+                // Check if there's data before setting completedQuizzes
+                if (response.data && response.data.length > 0) {
+                    setCompletedQuizzes(response.data);
+                } else {
+                    setCompletedQuizzes([]); // Set an empty array if no quizzes have been completed
+                }
             } catch (error) {
-                console.error("Error fetching completed quizzes:", error);
+                // Check if error is due to no quizzes
+                if (error.response && error.response.status === 404) {
+                    console.warn("No completed quizzes found for this employee.");
+                    setCompletedQuizzes([]); // Set empty array if no quizzes found
+                } else {
+                    console.error("Error fetching completed quizzes:", error);
+                }
             }
         };
-
+    
         fetchCompletedQuizzes();
     }, [employeeId]);
-
+    
     // Fetch employee's quiz scores and time spent
     useEffect(() => {
         const fetchScores = async () => {
             const token = localStorage.getItem("token");
-
+    
             try {
                 const response = await axios.get(`http://localhost:5000/api/employee/scores/${employeeId}`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
                 });
-                setScores(response.data);
+    
+                // Check if there's data before setting scores
+                if (response.data && response.data.length > 0) {
+                    setScores(response.data);
+                } else {
+                    setScores([]); // Set an empty array if no scores exist
+                }
             } catch (error) {
-                console.error("Error fetching scores:", error);
+                // Check if error is due to no scores found
+                if (error.response && error.response.status === 404) {
+                    console.warn("No scores found for this employee.");
+                    setScores([]); // Set empty array if no scores found
+                } else {
+                    console.error("Error fetching scores:", error);
+                }
             }
         };
-
+    
         fetchScores();
     }, [employeeId]);
-
+    
     // Logout function
     const handleLogout = () => {
         localStorage.removeItem("token");
@@ -324,7 +347,7 @@ const EmployeeDashboard = () => {
 
             {/* Navbar */}
             <nav className="navbar navbar-expand-lg navbar-light bg-light mt-4">
-                <span className="navbar-brand">Dashboard</span>
+                {/* <span className="navbar-brand">Dashboard</span> */}
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className={`nav-item ${activeTab === "learning" ? "active" : ""}`}>
