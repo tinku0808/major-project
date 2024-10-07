@@ -32,13 +32,7 @@ exports.login = async (req, res) => {
         res.status(500).json({ msg: "Server error" });
     }
 };
-const transporter = nodemailer.createTransport({
-    host: "smtp.office365.com",
-    auth: {
-        user: process.env.EMAIL_USER,  // Using environment variable
-        pass: process.env.EMAIL_PASS   // Using environment variable // Your email password or app password if using 2FA
-    },
-});
+
 
 
 exports.createEmployee = async (req, res) => {
@@ -62,6 +56,15 @@ exports.createEmployee = async (req, res) => {
         });
 
         await user.save();
+        const transporter = nodemailer.createTransport({
+            host: "smtp.office365.com",
+            port: 587,  // Use 587 for TLS
+            secure: false,
+            auth: {
+                user: process.env.EMAIL_USER,  // Using environment variable
+                pass: process.env.EMAIL_PASS  // Using environment variable // Your email password or app password if using 2FA
+            },
+        });
 
         // Prepare the email options
         const mailOptions = {
@@ -115,42 +118,6 @@ exports.getEmployeeById = async (req, res) => {
         res.status(500).json({ msg: "Server error" });
     }
 };
-
-// exports.updateEmployee = async (req, res) => {
-//     const { employeeId } = req.params; // Get employeeId from route params
-//     const { name, email, password, team, department } = req.body;
-
-//     try {
-//         // Validate that employeeId is a number
-//         if (isNaN(employeeId)) {
-//             return res.status(400).json({ message: 'Invalid employee ID format' });
-//         }
-
-//         // Find employee by employeeId
-//         const user = await User.findOne({ employeeId: employeeId }); // Convert to number for the query
-//         if (!user) {
-//             return res.status(404).json({ msg: "Employee not found" });
-//         }
-
-//         // Update fields
-//         user.name = name || user.name;
-//         user.email = email || user.email;
-//         user.team = team || user.team;
-//         user.department = department || user.department;
-
-//         // Update password if provided
-//         if (password) {
-//             user.password = await bcrypt.hash(password, 10);
-//         }
-
-//         await user.save();
-//         res.status(200).json({ msg: "Employee updated successfully" });
-//     } catch (err) {
-//         console.error(err);
-//         res.status(500).json({ msg: "Server error" });
-//     }
-// };
-
 
 exports.updateEmployee = async (req, res) => {
     const { employeeId } = req.params;

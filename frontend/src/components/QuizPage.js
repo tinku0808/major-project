@@ -170,7 +170,7 @@ const QuizPage = () => {
 
         <button
           type="button"
-          className="btn btn-secondary mt-3"
+          className="btn btn-success mt-3"
           onClick={addQuestion}
           style={{ marginRight: "10px" }}
         >
