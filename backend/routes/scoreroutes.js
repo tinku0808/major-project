@@ -132,6 +132,56 @@ router.get('/scores/employee/:id', async (req, res) => {
     }
 });
 
+// Fetch employee name, department, learning material title, score, and time spent
+router.get("/khushi/detailed-scores", async (req, res) => {
+    try {
+        // Step 1: Fetch all scores
+        const scores = await Score.find().populate({
+            path: "quizId",
+            populate: { path: "learningMaterial", select: "title" }, // Populating learning material title from Quiz
+        });
+
+        if (!scores.length) {
+            return res.status(404).json({ message: "No scores found" });
+        }
+
+        // Step 2: Extract unique employeeIds from the scores
+        const employeeIds = [...new Set(scores.map((score) => score.employeeId))];
+
+        // Step 3: Fetch employee details (name and department) for the extracted employeeIds
+        const employees = await User.find(
+            { employeeId: { $in: employeeIds } },
+            "employeeId name department"
+        );
+
+        // Step 4: Create a map of employeeId to employee details for easy lookup
+        const employeeMap = employees.reduce((map, employee) => {
+            map[employee.employeeId] = {
+                name: employee.name,
+                department: employee.department,
+            };
+            return map;
+        }, {});
+
+        // Step 5: Format the final response
+        const result = scores.map((score) => {
+            const employee = employeeMap[score.employeeId] || { name: "N/A", department: "N/A" };
+            return {
+                employeeName: employee.name,
+                department: employee.department,
+                learningMaterialTitle: score.quizId?.learningMaterial?.title || "N/A", // From LearningMaterial
+                score: score.score,
+                timeSpent: score.timeSpent,
+            };
+        });
+
+        // Step 6: Send the formatted result as response
+        res.json(result);
+    } catch (error) {
+        console.error("Error fetching detailed scores:", error);
+        res.status(500).json({ message: "Internal server error" });
+    }
+});
 
 
 
