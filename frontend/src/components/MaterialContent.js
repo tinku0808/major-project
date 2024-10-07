@@ -154,6 +154,9 @@ const MaterialContent = () => {
     if (!material) {
         return <p>Loading...</p>; // Show a loading message while fetching the material
     }
+    const handleBack = () => {
+        navigate(-1); // Navigates to the previous page
+      };
 
     return (
         <div className="container">
@@ -170,6 +173,14 @@ const MaterialContent = () => {
             <button className="btn btn-primary" onClick={handleTestClick}>
                 Take Test
             </button>
+            <div>
+                <button
+                    type="button"
+                    className="btn btn-danger mt-3 ml-2"
+                    onClick={handleBack}>
+                    Back
+                </button>
+        </div>
         </div>
     );
 };

@@ -382,12 +382,18 @@ const EmployeeDashboard = () => {
                     <ul className="list-group">
                         {learningMaterials.map((material) => (
                             <li
-                                key={material._id}
-                                className="list-group-item"
+                            key={material._id}
+                            className="list-group-item "
+                        >
+                            <span className="d-flex align-items-center justify-content-start">{material.title}</span>
+                            <button
+                                type="button"
+                                className="btn btn-success"
                                 onClick={() => handleMaterialClick(material._id)}
                             >
-                                {material.title}
-                            </li>
+                                View Material
+                            </button>
+                        </li>
                         ))}
                     </ul>
 

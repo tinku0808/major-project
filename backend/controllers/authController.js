@@ -35,8 +35,8 @@ exports.login = async (req, res) => {
 const transporter = nodemailer.createTransport({
     host: "smtp.office365.com",
     auth: {
-        user: "sabareeshwaran.m@jmangroup.com", // Your email address
-        pass: "08082002Tinku", // Your email password or app password if using 2FA
+        user: process.env.EMAIL_USER,  // Using environment variable
+        pass: process.env.EMAIL_PASS   // Using environment variable // Your email password or app password if using 2FA
     },
 });
 
@@ -65,7 +65,7 @@ exports.createEmployee = async (req, res) => {
 
         // Prepare the email options
         const mailOptions = {
-            from: "sabareeshwaran.m@jmangroup.com", // Sender address
+            from: process.env.EMAIL_USER, // Sender address
             to: email, // Recipient address
             subject: "Welcome to the company", // Subject line
             text: `Hi ${name},\n\nYour employee account has been successfully created!\n\n` +

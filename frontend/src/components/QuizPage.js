@@ -1,4 +1,3 @@
-// src/components/QuizPage.js
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
@@ -54,6 +53,13 @@ const QuizPage = () => {
     setQuizData({ ...quizData, questions: updatedQuestions });
   };
 
+  // Delete a question
+  const deleteQuestion = (qIndex) => {
+    const updatedQuestions = [...quizData.questions];
+    updatedQuestions.splice(qIndex, 1); // Remove the question at qIndex
+    setQuizData({ ...quizData, questions: updatedQuestions });
+  };
+
   // Handle quiz submission
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -66,14 +72,13 @@ const QuizPage = () => {
     }
 
     try {
-        console.log(learningMaterialId)
       await axios.post(
         `http://localhost:5000/api/quiz/create-quiz/${learningMaterialId}`,
         quizData,
         {
           headers: {
             "x-auth-token": token,
-          }
+          },
         }
       );
       alert("Quiz created successfully");
@@ -82,6 +87,11 @@ const QuizPage = () => {
       console.error("Error creating quiz:", err);
       alert("Failed to create quiz");
     }
+  };
+
+  // Go back to the previous page
+  const handleBack = () => {
+    navigate(-1); // Navigates to the previous page
   };
 
   return (
@@ -142,19 +152,43 @@ const QuizPage = () => {
               type="button"
               className="btn btn-secondary mt-2"
               onClick={() => addOption(qIndex)}
+              style={{ marginRight: "25px" }}
             >
               Add Option
             </button>
+            <div>
+            <button
+              type="button"
+              className="btn btn-warning mt-2 ml-2"
+              onClick={() => deleteQuestion(qIndex)}
+            >
+              Delete Question
+            </button>
+            </div>
           </div>
         ))}
 
-        <button type="button" className="btn btn-secondary mt-3" onClick={addQuestion}>
+        <button
+          type="button"
+          className="btn btn-secondary mt-3"
+          onClick={addQuestion}
+          style={{ marginRight: "10px" }}
+        >
           Add Question
         </button>
 
         <button type="submit" className="btn btn-primary mt-3">
           Create Quiz
         </button>
+        <div>
+        <button
+          type="button"
+          className="btn btn-danger mt-3 ml-2"
+          onClick={handleBack}
+        >
+          Back
+        </button>
+        </div>
       </form>
     </div>
   );
