@@ -22,7 +22,7 @@ router.get("/scores/:employeeId", async (req, res) => {
         }
 
         // Log fetched scores for debugging
-        console.log("Fetched Scores: ", scores);
+        // console.log("Fetched Scores: ", scores);
 
         // Format response
         const result = scores.map((score) => ({
@@ -33,7 +33,7 @@ router.get("/scores/:employeeId", async (req, res) => {
         
 
         // Log formatted response for debugging
-        console.log("Formatted Result: ", result);
+        // console.log("Formatted Result: ", result);
 
         res.json(result);
     } catch (error) {

@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import Visualization from "./Visualization";
 
 const AdminDashboard = () => {
     const [view, setView] = useState("createEmployee");
@@ -253,6 +254,9 @@ const AdminDashboard = () => {
                         <button className="nav-link btn" onClick={() => setView("performance")}>Employee Performance</button>
                     </li>
                     <li className="nav-item">
+                        <button className="nav-link btn" onClick={() => setView("analysis")}>Performance Analysis</button>
+                    </li>
+                    <li className="nav-item">
                         <Link className="nav-link" to="/admin-dashboard/feedback-list">Feedback List</Link>
                     </li>
                 </ul>
@@ -409,6 +413,14 @@ const AdminDashboard = () => {
                     </div>
                 </div>
             )}
+             {view === "analysis" && (
+                <div className="row">
+                    {/* Visualization Component */}
+                    <div className="col-md-12">
+                        <Visualization />
+                    </div>
+                </div>
+  )}
 
             {/* Edit Employee Modal */}
             <Modal show={showEditModal} onHide={() => setShowEditModal(false)}>

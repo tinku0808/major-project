@@ -15,7 +15,7 @@ exports.login = async (req, res) => {
         // Check password
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) return res.status(400).json({ msg: "Invalid credentials" });
-        console.log(user)
+        // console.log(user)
         // Create JWT Token
         const payload = {
             user: {
@@ -184,7 +184,7 @@ exports.updateEmployee = async (req, res) => {
 exports.deleteEmployee = async (req, res) => {
     try {
         const { employeeId } = req.params; // Get employeeId from request parameters
-        console.log('Attempting to delete employee with ID:', employeeId);
+        // console.log('Attempting to delete employee with ID:', employeeId);
 
         // Validate that employeeId is a number
         if (isNaN(employeeId)) {
