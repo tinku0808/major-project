@@ -1,0 +1,251 @@
+employeeId,name,email,role,team,department
+1,Lorenzo Waters,kaleb_leffler@hotmail.com,admin,Toys,Garden
+2,Christina Marks,gloria.farrell@yahoo.com,admin,Music,Kids
+3,Bobbie Turcotte-Cole,elwin.heidenreich@gmail.com,admin,Clothing,Kids
+4,Ted Bartell,osbaldo_kiehn@gmail.com,admin,Electronics,Music
+5,Joan Hane-Denesik,larue_padberg17@yahoo.com,admin,Sports,Jewelry
+6,Miss Beth Bashirian,luther.bins@hotmail.com,admin,Automotive,Clothing
+7,Charlie Ruecker,cornelius.berge@hotmail.com,admin,Clothing,Home
+8,Julie Hermiston,roslyn90@gmail.com,admin,Clothing,Clothing
+9,Darrin Abbott,marina.kemmer@gmail.com,admin,Sports,Jewelry
+10,Pam Rolfson,xavier_murphy65@hotmail.com,admin,Computers,Movies
+11,Mr. Van Howell,rachelle_emmerich94@hotmail.com,employee,Computers,Electronics
+12,Dr. Emmett Gleichner,joseph.kuvalis14@hotmail.com,employee,Grocery,Clothing
+13,Dr. Alfredo Mosciski,kip.bernhard-mayert59@hotmail.com,employee,Baby,Jewelry
+14,Lula Harris,alanis_kirlin@yahoo.com,employee,Electronics,Sports
+15,Ricardo Dicki DVM,kellen6@yahoo.com,employee,Music,Baby
+16,Dr. Aaron Ruecker IV,eryn7@yahoo.com,employee,Jewelry,Automotive
+17,Michael Heidenreich,wilfrid.beier65@gmail.com,employee,Shoes,Automotive
+18,Lynda Weimann Sr.,rossie1@hotmail.com,employee,Baby,Shoes
+19,Brendan Wyman,daphnee_mckenzie87@gmail.com,employee,Games,Electronics
+20,Fred Runolfsdottir,corbin52@yahoo.com,employee,Movies,Garden
+21,Margie Gulgowski,cheyenne_legros62@hotmail.com,employee,Toys,Grocery
+22,Laurie Turner,celestine_kunze@hotmail.com,employee,Electronics,Sports
+23,Fred O'Connell,evie_oreilly@hotmail.com,employee,Games,Jewelry
+24,Jordan Tillman,daryl23@yahoo.com,employee,Shoes,Garden
+25,Olivia Goodwin PhD,fabian5@yahoo.com,employee,Toys,Industrial
+26,Muriel Runolfsdottir,karine_fahey69@hotmail.com,employee,Books,Outdoors
+27,Jeffrey Schimmel,chelsie_hoppe@hotmail.com,employee,Health,Music
+28,Christie Denesik,javonte40@gmail.com,employee,Outdoors,Computers
+29,Salvador Kirlin,brenden_gibson-wehner@gmail.com,employee,Books,Electronics
+30,Norman Romaguera,cecile6@gmail.com,employee,Sports,Music
+31,Marc Little Jr.,orie.towne@gmail.com,employee,Industrial,Clothing
+32,Ellen Hand,jazmyne.beatty@yahoo.com,employee,Grocery,Beauty
+33,Dave Dooley,anne_okuneva30@gmail.com,employee,Clothing,Outdoors
+34,Mack Wolff,jonathon44@yahoo.com,employee,Sports,Jewelry
+35,Dr. Tommie Stanton,cesar.mueller@gmail.com,employee,Garden,Toys
+36,Myrtle Zemlak,maurine71@hotmail.com,employee,Toys,Movies
+37,Dr. John Treutel,jenifer.gottlieb1@hotmail.com,employee,Music,Outdoors
+38,Darla Schoen-Jacobs,lemuel8@yahoo.com,employee,Electronics,Toys
+39,Roberto Schroeder,eloy.borer97@hotmail.com,employee,Electronics,Garden
+40,Renee Nikolaus,dino75@gmail.com,employee,Outdoors,Outdoors
+41,Lucia Wisozk,ronaldo_bartoletti-legros@yahoo.com,employee,Health,Industrial
+42,Mrs. Stacy Lemke,lexie_hirthe@yahoo.com,employee,Industrial,Home
+43,Heather Luettgen,lynn95@gmail.com,employee,Music,Baby
+44,Ervin Friesen,mona.konopelski15@yahoo.com,employee,Sports,Garden
+45,Gary Aufderhar,abigayle.corkery80@gmail.com,employee,Jewelry,Outdoors
+46,Elijah Nienow,walter.mayer7@yahoo.com,employee,Baby,Industrial
+47,Jody Ankunding,marvin.marvin@hotmail.com,employee,Health,Jewelry
+48,Nichole Ferry,jaiden12@gmail.com,employee,Computers,Sports
+49,Anne Kuphal,carissa48@gmail.com,employee,Sports,Kids
+50,Emanuel Ward PhD,juliet56@gmail.com,employee,Clothing,Computers
+51,Armando Wilderman,enoch.ernser-johnston0@yahoo.com,employee,Sports,Music
+52,Kerry Herman DVM,kylee.hodkiewicz55@gmail.com,employee,Beauty,Electronics
+53,Joshua Hessel,daisha.krajcik88@yahoo.com,employee,Movies,Movies
+54,Jamie Orn,abraham_schmitt98@hotmail.com,employee,Jewelry,Garden
+55,Ms. Megan Borer,jana.spencer98@hotmail.com,employee,Toys,Grocery
+56,Lynn Cummings Jr.,travon_vandervort36@hotmail.com,employee,Health,Books
+57,Emmett Bins-McClure,geraldine1@yahoo.com,employee,Baby,Outdoors
+58,Frank Doyle,donavon.wyman22@hotmail.com,employee,Industrial,Books
+59,Salvador Mills,amina15@yahoo.com,employee,Home,Grocery
+60,Beatrice Crist,elmer.steuber@hotmail.com,employee,Home,Sports
+61,Julius Jacobson,princess.koss10@gmail.com,employee,Industrial,Sports
+62,Annie Powlowski,enrique_ondricka33@gmail.com,employee,Beauty,Beauty
+63,Marvin Rogahn,vida22@gmail.com,employee,Kids,Industrial
+64,George Cruickshank,leonor.sipes@hotmail.com,employee,Movies,Sports
+65,Pat Mayert,juliet_emard82@yahoo.com,employee,Shoes,Automotive
+66,Guillermo Kihn,marcus96@hotmail.com,employee,Toys,Beauty
+67,Dr. Faith Cole,jamel.bahringer19@yahoo.com,employee,Health,Jewelry
+68,Mr. Kerry O'Connell,joanie.bednar@yahoo.com,employee,Toys,Automotive
+69,Sheldon Medhurst,darrel_becker@gmail.com,employee,Electronics,Computers
+70,Dr. Joel Block,briana_abernathy@hotmail.com,employee,Books,Clothing
+71,Deanna Crona-Luettgen,claire_turcotte32@yahoo.com,employee,Grocery,Sports
+72,Dr. Belinda Kunze,judge.bahringer@yahoo.com,employee,Movies,Movies
+73,Timmy Bogisich,gabriella32@yahoo.com,employee,Industrial,Shoes
+74,Derrick Beahan,rosario_jenkins1@gmail.com,employee,Clothing,Toys
+75,Kim Bailey V,aniyah.stroman@gmail.com,employee,Grocery,Kids
+76,Courtney Jacobson,skylar24@gmail.com,employee,Automotive,Sports
+77,Estelle Runolfsson,ruthie17@gmail.com,employee,Beauty,Games
+78,Frederick Crona,geovanny_gerlach@yahoo.com,employee,Garden,Garden
+79,Dawn Abshire I,friedrich90@gmail.com,employee,Tools,Clothing
+80,Mr. Darrel Shields,heloise_mayert-rath90@yahoo.com,employee,Movies,Movies
+81,Mr. Lonnie Stokes-Aufderhar,brooks83@gmail.com,employee,Baby,Baby
+82,Leah Kassulke,marquis_bernhard@hotmail.com,employee,Grocery,Computers
+83,Randolph Hodkiewicz,verner_schultz@hotmail.com,employee,Health,Outdoors
+84,Erica Batz,timothy63@hotmail.com,employee,Movies,Tools
+85,Cecilia Marks PhD,dalton10@gmail.com,employee,Outdoors,Baby
+86,Forrest Nicolas,agustina.friesen29@hotmail.com,employee,Industrial,Clothing
+87,Melba Rice,jedediah54@gmail.com,employee,Beauty,Tools
+88,Marian Schneider,naomi3@yahoo.com,employee,Baby,Clothing
+89,Ricardo Gutkowski,edward.ferry3@yahoo.com,employee,Beauty,Jewelry
+90,Geneva Jones Jr.,elinor_witting@gmail.com,employee,Games,Toys
+91,Ginger Hodkiewicz,gillian_wyman50@gmail.com,employee,Electronics,Sports
+92,Geraldine West,eloisa_wilderman33@hotmail.com,employee,Beauty,Tools
+93,Hubert Runolfsdottir,anna.bechtelar49@yahoo.com,employee,Sports,Home
+94,Cedric Torp,cameron73@hotmail.com,employee,Baby,Jewelry
+95,Shari Dach,tremayne_white27@hotmail.com,employee,Clothing,Electronics
+96,Alice Mohr DDS,cecil_bruen@gmail.com,employee,Toys,Computers
+97,Sheila Hermiston,elinore.hauck22@hotmail.com,employee,Tools,Electronics
+98,Sheryl Cruickshank,lelah_daniel12@yahoo.com,employee,Books,Kids
+99,Rebecca Kerluke-MacGyver,bart_padberg28@hotmail.com,employee,Clothing,Shoes
+100,Jennie Koelpin,elva46@yahoo.com,employee,Movies,Tools
+101,Edmond Koch,june_tremblay@hotmail.com,employee,Jewelry,Outdoors
+102,Virginia McClure-Mills,sebastian_schulist@hotmail.com,employee,Games,Kids
+103,Jack Balistreri V,natasha93@hotmail.com,employee,Electronics,Computers
+104,Dwayne Bartell,juana22@yahoo.com,employee,Sports,Home
+105,Norman Abshire,devyn.kovacek@hotmail.com,employee,Books,Sports
+106,Grady Armstrong DVM,emory39@gmail.com,employee,Outdoors,Toys
+107,Verna Conn,delpha_ratke@gmail.com,employee,Music,Electronics
+108,Rex Tromp,jared.swaniawski@hotmail.com,employee,Outdoors,Industrial
+109,Nadine Walsh,bennett.streich71@gmail.com,employee,Movies,Industrial
+110,Nicholas Reichel DVM,sydni3@gmail.com,employee,Garden,Kids
+111,Tammy Dickinson,cleo_runolfsson78@yahoo.com,employee,Shoes,Industrial
+112,Bernadette Nienow MD,helena.schmitt7@hotmail.com,employee,Jewelry,Books
+113,Bradford Koelpin Sr.,cayla.roob7@hotmail.com,employee,Industrial,Electronics
+114,Roman Stokes-Boyer,hermina_satterfield70@hotmail.com,employee,Baby,Games
+115,Nichole Abbott,carlo_hermann@gmail.com,employee,Health,Industrial
+116,Shelley Glover,caesar.kris@gmail.com,employee,Books,Jewelry
+117,Diana Pollich Jr.,keegan_beier@yahoo.com,employee,Grocery,Clothing
+118,Veronica Batz,fannie49@gmail.com,employee,Kids,Clothing
+119,Wilfred Von,eloy_hayes@yahoo.com,employee,Games,Beauty
+120,Crystal Ernser,pauline77@yahoo.com,employee,Automotive,Jewelry
+121,Teresa Marvin,ross_douglas36@hotmail.com,employee,Books,Kids
+122,Daisy D'Amore,jakayla.satterfield47@gmail.com,employee,Industrial,Games
+123,Victor Lueilwitz,eugene_abernathy@hotmail.com,employee,Electronics,Industrial
+124,Elizabeth Waelchi,kathleen13@yahoo.com,employee,Movies,Shoes
+125,Wanda Johnson,augustus.monahan9@gmail.com,employee,Kids,Industrial
+126,Rolando Schaden,rosamond18@yahoo.com,employee,Garden,Shoes
+127,Rachel Goldner,desmond.bayer@yahoo.com,employee,Games,Music
+128,Paul Wehner,bernadine_schinner50@hotmail.com,employee,Kids,Tools
+129,Jerome Metz PhD,zaria95@gmail.com,employee,Games,Outdoors
+130,Marcia Hettinger,eunice_dach@hotmail.com,employee,Computers,Industrial
+131,Austin Quitzon,grace90@hotmail.com,employee,Toys,Outdoors
+132,Antoinette Prohaska,bennett72@yahoo.com,employee,Electronics,Electronics
+133,Rogelio Little,winona67@gmail.com,employee,Health,Outdoors
+134,Darrin Tremblay,hester.bogisich@yahoo.com,employee,Kids,Tools
+135,Stephen Kautzer,estelle_connelly@gmail.com,employee,Jewelry,Toys
+136,Dr. Jennifer Sporer,mossie58@gmail.com,employee,Clothing,Shoes
+137,Miss Melody Rippin,jarod17@hotmail.com,employee,Books,Kids
+138,Lynette Thiel,virginie_olson@gmail.com,employee,Sports,Automotive
+139,Miguel Conroy,karli48@gmail.com,employee,Books,Electronics
+140,Kenneth Simonis,ellsworth_wintheiser@hotmail.com,employee,Baby,Health
+141,Enrique Collins,clay_dickinson65@gmail.com,employee,Computers,Outdoors
+142,Dana Rowe-Anderson,fern40@yahoo.com,employee,Health,Health
+143,Erik Shields,assunta.deckow92@gmail.com,employee,Computers,Movies
+144,Helen Ferry,derick.champlin@hotmail.com,employee,Jewelry,Shoes
+145,Roland Wolf,jaylen.lind69@gmail.com,employee,Music,Automotive
+146,Billy Schroeder,nicolas98@hotmail.com,employee,Grocery,Beauty
+147,Woodrow Trantow-Spinka,lorine45@gmail.com,employee,Movies,Games
+148,Ana Rowe,emma37@gmail.com,employee,Games,Health
+149,Casey Anderson-Wiegand,emmet6@gmail.com,employee,Baby,Industrial
+150,Bernadette Corkery,isabella_armstrong@yahoo.com,employee,Automotive,Automotive
+151,Desiree Lindgren,kattie.swaniawski39@hotmail.com,employee,Beauty,Industrial
+152,Kate Mann,jayme.rodriguez@hotmail.com,employee,Jewelry,Toys
+153,Mrs. Janet Welch,zackery.legros@hotmail.com,employee,Kids,Health
+154,Dr. Darren Skiles,jordon.huels88@yahoo.com,employee,Beauty,Garden
+155,Thomas Schaefer IV,faustino.zboncak23@yahoo.com,employee,Electronics,Tools
+156,Jaime Bechtelar,jett.dare@yahoo.com,employee,Toys,Garden
+157,Darnell Kunze IV,stella_stehr68@hotmail.com,employee,Electronics,Clothing
+158,Mrs. Shirley Pouros-Greenfelder,regan_ondricka29@gmail.com,employee,Beauty,Clothing
+159,Ms. Anita Pacocha,aylin_schumm38@gmail.com,employee,Automotive,Health
+160,Thomas Reichel,amani55@hotmail.com,employee,Beauty,Movies
+161,Ryan Rohan,lonny75@yahoo.com,employee,Grocery,Garden
+162,Clinton Cruickshank,mary.stoltenberg@gmail.com,employee,Automotive,Tools
+163,Mrs. Stacy Kulas,anthony56@gmail.com,employee,Computers,Tools
+164,Jodi Gleichner Sr.,elda_littel@yahoo.com,employee,Music,Health
+165,Timothy Murazik,sandy_ferry13@yahoo.com,employee,Shoes,Industrial
+166,Joanna Waelchi,lester.macgyver82@gmail.com,employee,Beauty,Movies
+167,Jim Watsica,heidi87@gmail.com,employee,Industrial,Baby
+168,Dr. Curtis Beer,michale_grimes@yahoo.com,employee,Grocery,Health
+169,Viola Kautzer,alaina56@yahoo.com,employee,Jewelry,Games
+170,Shirley Murphy,lilliana.rosenbaum@yahoo.com,employee,Shoes,Electronics
+171,Felipe Bahringer,georgianna64@gmail.com,employee,Baby,Toys
+172,Tyrone Hirthe DDS,beth32@yahoo.com,employee,Electronics,Health
+173,Mrs. Holly Deckow,bart.cassin-pouros@gmail.com,employee,Industrial,Baby
+174,Josefina Hettinger,helmer_murphy88@yahoo.com,employee,Games,Movies
+175,Sabrina Bernhard,diego72@yahoo.com,employee,Movies,Industrial
+176,Cecil Bosco,marisa_kuhic79@yahoo.com,employee,Home,Movies
+177,Sonja Kassulke,wendy.spinka75@yahoo.com,employee,Industrial,Beauty
+178,Kristin McGlynn,leon34@hotmail.com,employee,Sports,Music
+179,Sue Waters,darwin_lindgren@gmail.com,employee,Baby,Toys
+180,Judith Orn,cassidy85@hotmail.com,employee,Kids,Kids
+181,Clay Bauch,henry_hoppe@gmail.com,employee,Tools,Music
+182,Hector Gorczany,mekhi.barton89@hotmail.com,employee,Kids,Toys
+183,Carmen Schuppe,toy.pacocha@gmail.com,employee,Tools,Tools
+184,Karla VonRueden,ava24@yahoo.com,employee,Jewelry,Sports
+185,Sammy Dickens,julie_murphy83@hotmail.com,employee,Garden,Toys
+186,Terry Collins,chloe_davis@yahoo.com,employee,Movies,Jewelry
+187,Bobby Bashirian,brooke.roob@hotmail.com,employee,Sports,Computers
+188,Anne Crist I,maximus35@hotmail.com,employee,Industrial,Kids
+189,Alfredo Will,herman_pfannerstill15@hotmail.com,employee,Sports,Outdoors
+190,Frederick Schumm,danyka_rempel-willms1@hotmail.com,employee,Health,Beauty
+191,Mr. Sam Franecki,bianka.zulauf@gmail.com,employee,Clothing,Sports
+192,Rebecca Bernhard,osbaldo.bradtke@gmail.com,employee,Clothing,Sports
+193,Geraldine Waters-Brakus,shaniya_okeefe29@hotmail.com,employee,Automotive,Jewelry
+194,Santiago Kassulke,brendan.mclaughlin32@gmail.com,employee,Garden,Outdoors
+195,Fredrick Kiehn,asha55@yahoo.com,employee,Clothing,Home
+196,Carl Upton,brycen38@hotmail.com,employee,Health,Grocery
+197,Stanley Herman,humberto1@gmail.com,employee,Kids,Kids
+198,Andres Rowe,neal.lowe2@gmail.com,employee,Shoes,Outdoors
+199,Cynthia Russel,corene.stoltenberg@gmail.com,employee,Automotive,Outdoors
+200,Jose Wisozk,karl.jones@gmail.com,employee,Beauty,Baby
+201,Fred Christiansen,levi85@hotmail.com,employee,Industrial,Kids
+202,Luther Ebert,german_reilly27@yahoo.com,employee,Shoes,Movies
+203,Mr. Troy Medhurst,tabitha76@yahoo.com,employee,Electronics,Computers
+204,Gregory Gutkowski III,juvenal_crooks@hotmail.com,employee,Shoes,Sports
+205,Mrs. Becky Tillman MD,pierre.ruecker@yahoo.com,employee,Tools,Kids
+206,Carla Rempel,judah_schroeder64@gmail.com,employee,Health,Grocery
+207,Lynette Streich-Berge,johnathon_fay-dach@gmail.com,employee,Health,Kids
+208,Cheryl Kuhic,pascale.moen@yahoo.com,employee,Baby,Music
+209,Jacqueline Cronin,damaris_davis@gmail.com,employee,Home,Health
+210,Herbert Emard-Kuphal,rowena.greenfelder30@gmail.com,employee,Books,Beauty
+211,Delores Stoltenberg,melvina.waelchi41@hotmail.com,employee,Jewelry,Home
+212,Olivia Daniel,alexa18@hotmail.com,employee,Movies,Grocery
+213,Mrs. Lana Murray,bella.lehner@yahoo.com,employee,Grocery,Electronics
+214,Daisy O'Hara,tressa65@yahoo.com,employee,Garden,Home
+215,Clifford McCullough,garfield73@yahoo.com,employee,Toys,Computers
+216,Evelyn Dibbert,jeff_crona@yahoo.com,employee,Health,Games
+217,Lucas Rau,spencer42@hotmail.com,employee,Movies,Baby
+218,Rochelle Schroeder,ezequiel94@gmail.com,employee,Industrial,Baby
+219,Irving Deckow Jr.,vergie_mraz@yahoo.com,employee,Electronics,Toys
+220,Elbert Rodriguez,leonor_schmitt@yahoo.com,employee,Beauty,Electronics
+221,Dr. Dana Kessler,ivah_rempel56@yahoo.com,employee,Games,Music
+222,Debbie Buckridge,macy38@gmail.com,employee,Industrial,Beauty
+223,Terence Metz,ralph1@gmail.com,employee,Computers,Sports
+224,Wayne Corwin,nikita_leuschke@yahoo.com,employee,Games,Outdoors
+225,Orlando Walker,tyshawn_fay@yahoo.com,employee,Computers,Beauty
+226,Lois Wilderman,clark60@gmail.com,employee,Home,Garden
+227,Scott Stark,elmore_jacobson@hotmail.com,employee,Tools,Games
+228,Stacy Mann,dorian.ernser@gmail.com,employee,Garden,Kids
+229,Francis Kautzer,merritt.koch@hotmail.com,employee,Kids,Games
+230,Jerald Hand,ramona.breitenberg@yahoo.com,employee,Electronics,Tools
+231,Derrick Mayert,marilie_schulist@gmail.com,employee,Industrial,Outdoors
+232,Brittany Torp,mia.koepp@hotmail.com,employee,Automotive,Baby
+233,Miss Muriel Rogahn,phyllis_schinner@yahoo.com,employee,Toys,Books
+234,Irving D'Amore,norberto.dach@yahoo.com,employee,Clothing,Kids
+235,Diane Kovacek,juvenal49@yahoo.com,employee,Music,Beauty
+236,Angelo Kuphal,pink38@yahoo.com,employee,Toys,Music
+237,Kristine Hahn,granville_breitenberg@gmail.com,employee,Games,Industrial
+238,Terrell Ernser,odell.rutherford@yahoo.com,employee,Tools,Shoes
+239,Gladys Herzog,brock_mertz61@hotmail.com,employee,Jewelry,Grocery
+240,Glenn Kunze,missouri46@hotmail.com,employee,Games,Toys
+241,Kim Reichert,pedro.schoen77@yahoo.com,employee,Movies,Movies
+242,Wilfred Parker,ignacio.hessel@gmail.com,employee,Computers,Grocery
+243,Joy Abbott,nya_hermiston@gmail.com,employee,Beauty,Garden
+244,Roberto Funk,hettie_schuppe@gmail.com,employee,Baby,Books
+245,Jenna Bogan-Casper,krista10@hotmail.com,employee,Tools,Kids
+246,Essie Mayert,garett.legros65@yahoo.com,employee,Home,Books
+247,Marlene Jaskolski,emmet47@gmail.com,employee,Jewelry,Home
+248,Bryan Fahey,margie74@yahoo.com,employee,Tools,Toys
+249,May Nitzsche,gunner.kutch@yahoo.com,employee,Sports,Garden
+250,Todd Rohan,fatima.botsford@hotmail.com,employee,Grocery,Sports

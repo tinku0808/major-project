@@ -1,0 +1,238 @@
+employeeId,name,department,total_quizzes_taken,total_score,average_score,total_time_spent
+11,Mr. Van Howell,Electronics,5,85,17.0,365
+12,Dr. Emmett Gleichner,Clothing,2,106,53.0,99
+13,Dr. Alfredo Mosciski,Jewelry,3,26,8.666666666666666,90
+14,Lula Harris,Sports,6,265,44.166666666666664,451
+15,Ricardo Dicki DVM,Baby,5,165,33.0,270
+16,Dr. Aaron Ruecker IV,Automotive,7,289,41.285714285714285,566
+17,Michael Heidenreich,Automotive,8,382,47.75,302
+18,Lynda Weimann Sr.,Shoes,1,42,42.0,59
+19,Brendan Wyman,Electronics,2,84,42.0,92
+20,Fred Runolfsdottir,Garden,3,114,38.0,118
+21,Margie Gulgowski,Grocery,3,134,44.666666666666664,145
+22,Laurie Turner,Sports,4,170,42.5,216
+23,Fred O'Connell,Jewelry,4,183,45.75,431
+24,Jordan Tillman,Garden,4,192,48.0,278
+25,Olivia Goodwin PhD,Industrial,3,175,58.333333333333336,274
+26,Muriel Runolfsdottir,Outdoors,6,176,29.333333333333332,409
+27,Jeffrey Schimmel,Music,2,78,39.0,162
+28,Christie Denesik,Computers,3,139,46.333333333333336,173
+29,Salvador Kirlin,Electronics,4,218,54.5,126
+30,Norman Romaguera,Music,7,237,33.857142857142854,412
+31,Marc Little Jr.,Clothing,3,69,23.0,269
+32,Ellen Hand,Beauty,5,277,55.4,460
+33,Dave Dooley,Outdoors,6,153,25.5,383
+34,Mack Wolff,Jewelry,2,162,81.0,91
+35,Dr. Tommie Stanton,Toys,7,317,45.285714285714285,399
+36,Myrtle Zemlak,Movies,8,419,52.375,481
+37,Dr. John Treutel,Outdoors,5,386,77.2,291
+38,Darla Schoen-Jacobs,Toys,5,282,56.4,392
+39,Roberto Schroeder,Garden,2,158,79.0,127
+40,Renee Nikolaus,Outdoors,5,254,50.8,257
+41,Lucia Wisozk,Industrial,2,163,81.5,108
+42,Mrs. Stacy Lemke,Home,4,197,49.25,154
+43,Heather Luettgen,Baby,6,139,23.166666666666668,344
+44,Ervin Friesen,Garden,4,238,59.5,342
+45,Gary Aufderhar,Outdoors,2,105,52.5,95
+46,Elijah Nienow,Industrial,7,414,59.142857142857146,407
+47,Jody Ankunding,Jewelry,6,281,46.833333333333336,254
+48,Nichole Ferry,Sports,6,291,48.5,216
+49,Anne Kuphal,Kids,4,134,33.5,338
+50,Emanuel Ward PhD,Computers,3,131,43.666666666666664,218
+51,Armando Wilderman,Music,1,44,44.0,85
+52,Kerry Herman DVM,Electronics,6,362,60.333333333333336,386
+53,Joshua Hessel,Movies,1,27,27.0,42
+54,Jamie Orn,Garden,6,209,34.833333333333336,193
+55,Ms. Megan Borer,Grocery,3,148,49.333333333333336,231
+56,Lynn Cummings Jr.,Books,5,175,35.0,312
+57,Emmett Bins-McClure,Outdoors,5,142,28.4,318
+58,Frank Doyle,Books,4,309,77.25,184
+59,Salvador Mills,Grocery,7,329,47.0,362
+60,Beatrice Crist,Sports,2,141,70.5,146
+61,Julius Jacobson,Sports,3,147,49.0,216
+62,Annie Powlowski,Beauty,7,325,46.42857142857143,462
+63,Marvin Rogahn,Industrial,10,447,44.7,737
+64,George Cruickshank,Sports,2,108,54.0,121
+65,Pat Mayert,Automotive,4,169,42.25,283
+66,Guillermo Kihn,Beauty,8,508,63.5,524
+67,Dr. Faith Cole,Jewelry,9,349,38.77777777777778,565
+68,Mr. Kerry O'Connell,Automotive,2,110,55.0,139
+69,Sheldon Medhurst,Computers,5,312,62.4,209
+70,Dr. Joel Block,Clothing,1,97,97.0,117
+71,Deanna Crona-Luettgen,Sports,4,208,52.0,187
+72,Dr. Belinda Kunze,Movies,4,166,41.5,289
+73,Timmy Bogisich,Shoes,4,229,57.25,182
+74,Derrick Beahan,Toys,1,36,36.0,96
+75,Kim Bailey V,Kids,3,149,49.666666666666664,225
+76,Courtney Jacobson,Sports,5,207,41.4,445
+77,Estelle Runolfsson,Games,6,219,36.5,139
+78,Frederick Crona,Garden,3,168,56.0,204
+79,Dawn Abshire I,Clothing,4,151,37.75,305
+80,Mr. Darrel Shields,Movies,1,16,16.0,54
+81,Mr. Lonnie Stokes-Aufderhar,Baby,1,2,2.0,93
+82,Leah Kassulke,Computers,4,240,60.0,210
+83,Randolph Hodkiewicz,Outdoors,2,105,52.5,147
+84,Erica Batz,Tools,3,56,18.666666666666668,152
+85,Cecilia Marks PhD,Baby,4,209,52.25,152
+86,Forrest Nicolas,Clothing,4,216,54.0,181
+88,Marian Schneider,Clothing,8,352,44.0,479
+89,Ricardo Gutkowski,Jewelry,2,156,78.0,191
+90,Geneva Jones Jr.,Toys,5,299,59.8,222
+91,Ginger Hodkiewicz,Sports,3,190,63.333333333333336,230
+92,Geraldine West,Tools,4,91,22.75,413
+93,Hubert Runolfsdottir,Home,4,170,42.5,196
+94,Cedric Torp,Jewelry,1,25,25.0,79
+95,Shari Dach,Electronics,5,227,45.4,239
+96,Alice Mohr DDS,Computers,4,164,41.0,217
+97,Sheila Hermiston,Electronics,3,115,38.333333333333336,126
+98,Sheryl Cruickshank,Kids,4,212,53.0,279
+99,Rebecca Kerluke-MacGyver,Shoes,5,206,41.2,235
+100,Jennie Koelpin,Tools,5,100,20.0,214
+101,Edmond Koch,Outdoors,5,227,45.4,196
+102,Virginia McClure-Mills,Kids,3,124,41.333333333333336,154
+103,Jack Balistreri V,Computers,5,335,67.0,327
+104,Dwayne Bartell,Home,4,244,61.0,248
+106,Grady Armstrong DVM,Toys,5,240,48.0,365
+107,Verna Conn,Electronics,10,603,60.3,449
+108,Rex Tromp,Industrial,4,235,58.75,254
+109,Nadine Walsh,Industrial,5,203,40.6,387
+110,Nicholas Reichel DVM,Kids,3,133,44.333333333333336,288
+111,Tammy Dickinson,Industrial,2,91,45.5,181
+112,Bernadette Nienow MD,Books,7,363,51.857142857142854,480
+113,Bradford Koelpin Sr.,Electronics,5,203,40.6,287
+114,Roman Stokes-Boyer,Games,5,183,36.6,254
+115,Nichole Abbott,Industrial,6,227,37.833333333333336,230
+116,Shelley Glover,Jewelry,4,186,46.5,273
+117,Diana Pollich Jr.,Clothing,7,441,63.0,508
+118,Veronica Batz,Clothing,3,58,19.333333333333332,208
+119,Wilfred Von,Beauty,2,38,19.0,43
+120,Crystal Ernser,Jewelry,1,13,13.0,26
+121,Teresa Marvin,Kids,4,207,51.75,138
+122,Daisy D'Amore,Games,1,50,50.0,46
+123,Victor Lueilwitz,Industrial,2,123,61.5,117
+124,Elizabeth Waelchi,Shoes,9,457,50.77777777777778,307
+125,Wanda Johnson,Industrial,2,45,22.5,200
+126,Rolando Schaden,Shoes,2,115,57.5,179
+127,Rachel Goldner,Music,5,276,55.2,447
+128,Paul Wehner,Tools,2,157,78.5,130
+129,Jerome Metz PhD,Outdoors,7,308,44.0,520
+130,Marcia Hettinger,Industrial,3,106,35.333333333333336,201
+131,Austin Quitzon,Outdoors,5,212,42.4,198
+132,Antoinette Prohaska,Electronics,5,219,43.8,422
+133,Rogelio Little,Outdoors,5,236,47.2,276
+134,Darrin Tremblay,Tools,7,308,44.0,438
+135,Stephen Kautzer,Toys,6,198,33.0,352
+136,Dr. Jennifer Sporer,Shoes,1,42,42.0,117
+137,Miss Melody Rippin,Kids,5,235,47.0,185
+138,Lynette Thiel,Automotive,4,201,50.25,398
+139,Miguel Conroy,Electronics,4,185,46.25,246
+140,Kenneth Simonis,Health,9,538,59.77777777777778,447
+141,Enrique Collins,Outdoors,4,134,33.5,240
+142,Dana Rowe-Anderson,Health,6,345,57.5,370
+143,Erik Shields,Movies,5,299,59.8,276
+144,Helen Ferry,Shoes,3,163,54.333333333333336,179
+145,Roland Wolf,Automotive,7,436,62.285714285714285,494
+146,Billy Schroeder,Beauty,3,72,24.0,319
+147,Woodrow Trantow-Spinka,Games,2,53,26.5,66
+148,Ana Rowe,Health,4,113,28.25,147
+149,Casey Anderson-Wiegand,Industrial,5,220,44.0,281
+150,Bernadette Corkery,Automotive,6,166,27.666666666666668,424
+151,Desiree Lindgren,Industrial,4,153,38.25,285
+152,Kate Mann,Toys,3,163,54.333333333333336,118
+153,Mrs. Janet Welch,Health,5,310,62.0,344
+154,Dr. Darren Skiles,Garden,3,193,64.33333333333333,149
+155,Thomas Schaefer IV,Tools,6,294,49.0,235
+156,Jaime Bechtelar,Garden,3,140,46.666666666666664,145
+157,Darnell Kunze IV,Clothing,2,136,68.0,36
+158,Mrs. Shirley Pouros-Greenfelder,Clothing,5,257,51.4,217
+159,Ms. Anita Pacocha,Health,4,198,49.5,179
+161,Ryan Rohan,Garden,2,124,62.0,70
+162,Clinton Cruickshank,Tools,6,398,66.33333333333333,379
+163,Mrs. Stacy Kulas,Tools,3,124,41.333333333333336,88
+164,Jodi Gleichner Sr.,Health,7,392,56.0,297
+165,Timothy Murazik,Industrial,5,325,65.0,406
+166,Joanna Waelchi,Movies,1,9,9.0,64
+167,Jim Watsica,Baby,6,269,44.833333333333336,444
+168,Dr. Curtis Beer,Health,5,351,70.2,442
+169,Viola Kautzer,Games,3,97,32.333333333333336,131
+170,Shirley Murphy,Electronics,5,307,61.4,181
+171,Felipe Bahringer,Toys,5,292,58.4,396
+172,Tyrone Hirthe DDS,Health,5,245,49.0,355
+173,Mrs. Holly Deckow,Baby,2,92,46.0,145
+174,Josefina Hettinger,Movies,8,280,35.0,506
+175,Sabrina Bernhard,Industrial,5,180,36.0,366
+176,Cecil Bosco,Movies,4,186,46.5,268
+177,Sonja Kassulke,Beauty,2,33,16.5,150
+178,Kristin McGlynn,Music,4,175,43.75,331
+179,Sue Waters,Toys,3,168,56.0,152
+180,Judith Orn,Kids,3,143,47.666666666666664,176
+181,Clay Bauch,Music,2,120,60.0,111
+182,Hector Gorczany,Toys,4,204,51.0,236
+183,Carmen Schuppe,Tools,4,240,60.0,192
+184,Karla VonRueden,Sports,5,187,37.4,391
+185,Sammy Dickens,Toys,5,342,68.4,253
+186,Terry Collins,Jewelry,5,294,58.8,430
+187,Bobby Bashirian,Computers,6,362,60.333333333333336,292
+188,Anne Crist I,Kids,2,60,30.0,84
+189,Alfredo Will,Outdoors,4,162,40.5,243
+190,Frederick Schumm,Beauty,3,157,52.333333333333336,178
+191,Mr. Sam Franecki,Sports,5,175,35.0,274
+192,Rebecca Bernhard,Sports,6,242,40.333333333333336,355
+193,Geraldine Waters-Brakus,Jewelry,2,73,36.5,117
+194,Santiago Kassulke,Outdoors,1,80,80.0,113
+195,Fredrick Kiehn,Home,2,151,75.5,139
+196,Carl Upton,Grocery,4,216,54.0,331
+197,Stanley Herman,Kids,2,160,80.0,118
+198,Andres Rowe,Outdoors,2,58,29.0,175
+199,Cynthia Russel,Outdoors,6,234,39.0,613
+200,Jose Wisozk,Baby,5,302,60.4,335
+201,Fred Christiansen,Kids,4,166,41.5,191
+202,Luther Ebert,Movies,3,138,46.0,287
+203,Mr. Troy Medhurst,Computers,3,264,88.0,248
+204,Gregory Gutkowski III,Sports,4,177,44.25,192
+205,Mrs. Becky Tillman MD,Kids,4,199,49.75,261
+206,Carla Rempel,Grocery,4,209,52.25,208
+207,Lynette Streich-Berge,Kids,3,200,66.66666666666667,303
+208,Cheryl Kuhic,Music,5,347,69.4,257
+209,Jacqueline Cronin,Health,2,168,84.0,146
+210,Herbert Emard-Kuphal,Beauty,7,249,35.57142857142857,228
+211,Delores Stoltenberg,Home,9,401,44.55555555555556,641
+212,Olivia Daniel,Grocery,3,116,38.666666666666664,175
+213,Mrs. Lana Murray,Electronics,4,273,68.25,292
+214,Daisy O'Hara,Home,2,100,50.0,150
+215,Clifford McCullough,Computers,4,306,76.5,191
+216,Evelyn Dibbert,Games,8,245,30.625,450
+217,Lucas Rau,Baby,3,92,30.666666666666668,170
+218,Rochelle Schroeder,Baby,2,155,77.5,150
+219,Irving Deckow Jr.,Toys,3,268,89.33333333333333,111
+220,Elbert Rodriguez,Electronics,3,67,22.333333333333332,104
+221,Dr. Dana Kessler,Music,6,312,52.0,407
+222,Debbie Buckridge,Beauty,3,79,26.333333333333332,219
+223,Terence Metz,Sports,3,35,11.666666666666666,261
+224,Wayne Corwin,Outdoors,5,149,29.8,465
+225,Orlando Walker,Beauty,6,380,63.333333333333336,385
+226,Lois Wilderman,Garden,7,224,32.0,544
+227,Scott Stark,Games,2,39,19.5,88
+228,Stacy Mann,Kids,4,253,63.25,146
+229,Francis Kautzer,Games,5,98,19.6,282
+230,Jerald Hand,Tools,3,184,61.333333333333336,164
+231,Derrick Mayert,Outdoors,4,122,30.5,254
+232,Brittany Torp,Baby,8,451,56.375,519
+233,Miss Muriel Rogahn,Books,4,139,34.75,264
+234,Irving D'Amore,Kids,2,81,40.5,112
+235,Diane Kovacek,Beauty,5,251,50.2,434
+236,Angelo Kuphal,Music,5,183,36.6,254
+237,Kristine Hahn,Industrial,3,127,42.333333333333336,216
+238,Terrell Ernser,Shoes,6,244,40.666666666666664,378
+239,Gladys Herzog,Grocery,6,224,37.333333333333336,232
+240,Glenn Kunze,Toys,1,39,39.0,20
+241,Kim Reichert,Movies,2,133,66.5,52
+242,Wilfred Parker,Grocery,2,109,54.5,155
+243,Joy Abbott,Garden,7,360,51.42857142857143,398
+244,Roberto Funk,Books,4,208,52.0,291
+245,Jenna Bogan-Casper,Kids,3,220,73.33333333333333,147
+246,Essie Mayert,Books,7,457,65.28571428571429,250
+247,Marlene Jaskolski,Home,7,378,54.0,433
+248,Bryan Fahey,Toys,6,217,36.166666666666664,308
+249,May Nitzsche,Garden,6,299,49.833333333333336,336
+250,Todd Rohan,Sports,4,149,37.25,299

@@ -1,0 +1,237 @@
+employeeId,name,total_feedback_count,average_rating
+11,Mr. Van Howell,10,1.8
+12,Dr. Emmett Gleichner,3,2.6666666666666665
+13,Dr. Alfredo Mosciski,7,3.7142857142857144
+14,Lula Harris,5,3.2
+15,Ricardo Dicki DVM,5,2.6
+16,Dr. Aaron Ruecker IV,3,2.3333333333333335
+17,Michael Heidenreich,6,3.6666666666666665
+18,Lynda Weimann Sr.,6,3.8333333333333335
+19,Brendan Wyman,4,2.5
+20,Fred Runolfsdottir,2,4.0
+21,Margie Gulgowski,4,2.0
+22,Laurie Turner,2,2.5
+23,Fred O'Connell,3,3.3333333333333335
+24,Jordan Tillman,2,3.5
+25,Olivia Goodwin PhD,7,2.7142857142857144
+26,Muriel Runolfsdottir,7,2.857142857142857
+27,Jeffrey Schimmel,4,4.0
+28,Christie Denesik,3,2.3333333333333335
+29,Salvador Kirlin,7,2.857142857142857
+30,Norman Romaguera,3,3.0
+31,Marc Little Jr.,3,2.6666666666666665
+32,Ellen Hand,1,3.0
+33,Dave Dooley,6,2.8333333333333335
+34,Mack Wolff,6,2.6666666666666665
+35,Dr. Tommie Stanton,6,3.5
+36,Myrtle Zemlak,5,3.0
+37,Dr. John Treutel,3,3.0
+38,Darla Schoen-Jacobs,1,3.0
+39,Roberto Schroeder,2,1.0
+40,Renee Nikolaus,7,2.2857142857142856
+41,Lucia Wisozk,4,2.25
+42,Mrs. Stacy Lemke,7,3.142857142857143
+43,Heather Luettgen,1,4.0
+44,Ervin Friesen,2,1.0
+45,Gary Aufderhar,6,3.6666666666666665
+46,Elijah Nienow,4,4.5
+47,Jody Ankunding,1,1.0
+48,Nichole Ferry,4,2.75
+49,Anne Kuphal,5,3.2
+50,Emanuel Ward PhD,2,4.5
+51,Armando Wilderman,9,3.5555555555555554
+52,Kerry Herman DVM,4,5.0
+53,Joshua Hessel,8,2.625
+54,Jamie Orn,5,3.0
+55,Ms. Megan Borer,4,2.25
+56,Lynn Cummings Jr.,6,2.8333333333333335
+57,Emmett Bins-McClure,2,4.5
+58,Frank Doyle,3,3.0
+59,Salvador Mills,4,3.0
+60,Beatrice Crist,1,5.0
+61,Julius Jacobson,3,1.3333333333333333
+62,Annie Powlowski,6,4.5
+63,Marvin Rogahn,2,3.5
+64,George Cruickshank,5,2.4
+65,Pat Mayert,5,3.8
+66,Guillermo Kihn,4,3.5
+67,Dr. Faith Cole,5,3.0
+68,Mr. Kerry O'Connell,7,2.4285714285714284
+69,Sheldon Medhurst,2,2.5
+70,Dr. Joel Block,5,3.0
+71,Deanna Crona-Luettgen,6,2.8333333333333335
+72,Dr. Belinda Kunze,3,2.6666666666666665
+73,Timmy Bogisich,4,3.0
+74,Derrick Beahan,4,1.25
+75,Kim Bailey V,8,3.25
+77,Estelle Runolfsson,3,2.6666666666666665
+78,Frederick Crona,4,3.25
+79,Dawn Abshire I,5,3.4
+80,Mr. Darrel Shields,3,1.6666666666666667
+81,Mr. Lonnie Stokes-Aufderhar,1,4.0
+82,Leah Kassulke,6,2.8333333333333335
+83,Randolph Hodkiewicz,3,3.0
+84,Erica Batz,5,3.6
+85,Cecilia Marks PhD,9,2.888888888888889
+87,Melba Rice,2,3.5
+88,Marian Schneider,4,2.0
+89,Ricardo Gutkowski,5,2.8
+90,Geneva Jones Jr.,3,3.3333333333333335
+91,Ginger Hodkiewicz,4,3.25
+92,Geraldine West,6,2.6666666666666665
+93,Hubert Runolfsdottir,4,2.5
+94,Cedric Torp,6,2.0
+95,Shari Dach,4,3.5
+96,Alice Mohr DDS,4,2.5
+97,Sheila Hermiston,6,2.3333333333333335
+98,Sheryl Cruickshank,2,4.0
+99,Rebecca Kerluke-MacGyver,3,2.6666666666666665
+100,Jennie Koelpin,5,3.0
+101,Edmond Koch,2,3.5
+102,Virginia McClure-Mills,4,2.0
+103,Jack Balistreri V,9,2.6666666666666665
+104,Dwayne Bartell,3,2.6666666666666665
+105,Norman Abshire,1,1.0
+106,Grady Armstrong DVM,3,3.0
+107,Verna Conn,3,3.6666666666666665
+108,Rex Tromp,5,2.0
+109,Nadine Walsh,2,2.5
+110,Nicholas Reichel DVM,3,3.0
+111,Tammy Dickinson,6,3.5
+112,Bernadette Nienow MD,7,3.0
+113,Bradford Koelpin Sr.,3,2.0
+114,Roman Stokes-Boyer,8,2.75
+115,Nichole Abbott,5,3.2
+116,Shelley Glover,9,3.5555555555555554
+117,Diana Pollich Jr.,3,3.0
+118,Veronica Batz,5,2.8
+119,Wilfred Von,2,3.0
+120,Crystal Ernser,3,3.0
+121,Teresa Marvin,3,3.6666666666666665
+122,Daisy D'Amore,6,2.6666666666666665
+124,Elizabeth Waelchi,3,2.3333333333333335
+125,Wanda Johnson,2,2.0
+126,Rolando Schaden,3,2.6666666666666665
+127,Rachel Goldner,5,3.8
+128,Paul Wehner,7,3.5714285714285716
+129,Jerome Metz PhD,6,3.1666666666666665
+130,Marcia Hettinger,4,2.5
+131,Austin Quitzon,3,3.3333333333333335
+132,Antoinette Prohaska,6,2.8333333333333335
+133,Rogelio Little,5,3.4
+134,Darrin Tremblay,5,3.6
+135,Stephen Kautzer,1,5.0
+136,Dr. Jennifer Sporer,7,2.857142857142857
+137,Miss Melody Rippin,5,2.6
+138,Lynette Thiel,3,3.6666666666666665
+139,Miguel Conroy,4,2.0
+140,Kenneth Simonis,3,1.6666666666666667
+141,Enrique Collins,1,5.0
+142,Dana Rowe-Anderson,1,3.0
+143,Erik Shields,3,2.6666666666666665
+144,Helen Ferry,3,3.3333333333333335
+145,Roland Wolf,5,3.4
+146,Billy Schroeder,3,3.6666666666666665
+147,Woodrow Trantow-Spinka,5,3.4
+148,Ana Rowe,6,3.6666666666666665
+149,Casey Anderson-Wiegand,7,3.0
+150,Bernadette Corkery,3,3.0
+151,Desiree Lindgren,2,3.0
+152,Kate Mann,7,3.5714285714285716
+153,Mrs. Janet Welch,6,4.5
+154,Dr. Darren Skiles,7,4.0
+155,Thomas Schaefer IV,6,3.5
+156,Jaime Bechtelar,4,2.0
+157,Darnell Kunze IV,4,4.0
+158,Mrs. Shirley Pouros-Greenfelder,4,2.75
+159,Ms. Anita Pacocha,3,1.3333333333333333
+160,Thomas Reichel,5,3.2
+161,Ryan Rohan,3,3.0
+162,Clinton Cruickshank,5,3.2
+163,Mrs. Stacy Kulas,6,3.1666666666666665
+164,Jodi Gleichner Sr.,7,3.2857142857142856
+165,Timothy Murazik,3,4.0
+166,Joanna Waelchi,8,3.25
+167,Jim Watsica,4,3.25
+168,Dr. Curtis Beer,3,2.6666666666666665
+169,Viola Kautzer,3,3.6666666666666665
+170,Shirley Murphy,3,4.333333333333333
+171,Felipe Bahringer,4,3.75
+172,Tyrone Hirthe DDS,4,3.25
+173,Mrs. Holly Deckow,1,3.0
+174,Josefina Hettinger,2,2.5
+175,Sabrina Bernhard,2,2.0
+176,Cecil Bosco,7,3.0
+177,Sonja Kassulke,6,2.5
+178,Kristin McGlynn,3,2.3333333333333335
+179,Sue Waters,1,4.0
+180,Judith Orn,6,2.0
+181,Clay Bauch,4,3.25
+182,Hector Gorczany,5,3.8
+183,Carmen Schuppe,7,2.7142857142857144
+184,Karla VonRueden,5,3.0
+185,Sammy Dickens,3,1.6666666666666667
+186,Terry Collins,2,5.0
+187,Bobby Bashirian,2,2.5
+188,Anne Crist I,5,2.2
+189,Alfredo Will,2,1.5
+190,Frederick Schumm,4,2.75
+191,Mr. Sam Franecki,10,3.2
+192,Rebecca Bernhard,3,3.0
+193,Geraldine Waters-Brakus,4,3.0
+194,Santiago Kassulke,2,5.0
+195,Fredrick Kiehn,9,3.111111111111111
+196,Carl Upton,4,3.0
+197,Stanley Herman,3,3.6666666666666665
+198,Andres Rowe,4,3.5
+199,Cynthia Russel,5,3.2
+200,Jose Wisozk,3,1.3333333333333333
+201,Fred Christiansen,6,2.8333333333333335
+202,Luther Ebert,5,2.6
+203,Mr. Troy Medhurst,6,3.1666666666666665
+204,Gregory Gutkowski III,5,3.0
+205,Mrs. Becky Tillman MD,5,2.4
+206,Carla Rempel,6,1.8333333333333333
+207,Lynette Streich-Berge,3,2.6666666666666665
+208,Cheryl Kuhic,5,3.0
+209,Jacqueline Cronin,4,2.75
+210,Herbert Emard-Kuphal,6,2.6666666666666665
+211,Delores Stoltenberg,4,2.0
+212,Olivia Daniel,3,3.0
+213,Mrs. Lana Murray,5,2.0
+214,Daisy O'Hara,6,3.1666666666666665
+215,Clifford McCullough,3,3.0
+216,Evelyn Dibbert,3,3.6666666666666665
+217,Lucas Rau,4,3.0
+218,Rochelle Schroeder,2,2.0
+219,Irving Deckow Jr.,5,3.2
+220,Elbert Rodriguez,8,3.375
+221,Dr. Dana Kessler,3,4.0
+222,Debbie Buckridge,7,2.857142857142857
+223,Terence Metz,3,3.3333333333333335
+224,Wayne Corwin,5,3.0
+225,Orlando Walker,2,2.5
+226,Lois Wilderman,4,3.0
+227,Scott Stark,4,3.75
+228,Stacy Mann,5,2.0
+229,Francis Kautzer,2,3.5
+230,Jerald Hand,2,2.5
+231,Derrick Mayert,7,2.5714285714285716
+232,Brittany Torp,3,2.0
+233,Miss Muriel Rogahn,5,4.0
+235,Diane Kovacek,3,4.333333333333333
+236,Angelo Kuphal,1,5.0
+237,Kristine Hahn,5,4.4
+238,Terrell Ernser,4,2.75
+239,Gladys Herzog,6,4.0
+240,Glenn Kunze,5,3.2
+241,Kim Reichert,4,2.5
+242,Wilfred Parker,6,2.1666666666666665
+243,Joy Abbott,6,3.5
+244,Roberto Funk,1,1.0
+245,Jenna Bogan-Casper,2,3.5
+246,Essie Mayert,4,2.5
+247,Marlene Jaskolski,1,5.0
+248,Bryan Fahey,2,3.0
+249,May Nitzsche,3,3.3333333333333335
+250,Todd Rohan,1,3.0
