@@ -15,11 +15,6 @@ const markMaterialAsCompleted = async (req, res) => {
         }
 
         
-
-        // Mark the learning material as completed
-        // material.completed = true;
-        // await material.save();
-
         // Find the corresponding score entry for the employee and quiz
         const score = await Score.findOne({ employeeId: employeeId, quizId: materialId });
         // console.log("this is scoreeeee",score)
@@ -38,6 +33,6 @@ const markMaterialAsCompleted = async (req, res) => {
 
 
 module.exports = {
-    markMaterialAsCompleted,
-    // Other exports...
+    markMaterialAsCompleted
+
 };

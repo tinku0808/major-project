@@ -24,7 +24,7 @@ exports.getAllFeedback = async (req, res) => {
     }
 };
 
-// Get Feedback by Employee ID
+
 // Get Feedback by Employee ID
 exports.getFeedbackByEmployeeId = async (req, res) => {
   try {
@@ -36,9 +36,7 @@ exports.getFeedbackByEmployeeId = async (req, res) => {
   }
 };
 
-// Get Feedback Details
 
-// Get Feedback Details
 // Get Feedback Details
 exports.getFeedbackDetails = async (req, res) => {
     try {

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion"; // Import for animations
-// import "../styles/CreateLearningMaterial.css"; // Create this CSS file for additional styles
 
 const CreateLearningMaterial = () => {
     const [materialData, setMaterialData] = useState({

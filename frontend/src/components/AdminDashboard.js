@@ -16,7 +16,6 @@ const AdminDashboard = () => {
         team: "",
         department: "",
     });
-    
     const [editEmployeeData, setEditEmployeeData] = useState(null);
     const [showEditModal, setShowEditModal] = useState(false);
     const [performanceData, setPerformanceData] = useState([]);
@@ -25,6 +24,8 @@ const AdminDashboard = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [profilePic] = useState("https://i.imgur.com/SJae53b.jpeg");
     const [employeeName, setEmployeeName] = useState(""); 
+
+
     const employeeId = localStorage.getItem("employeeId"); 
 
     const navigate = useNavigate();

@@ -21,9 +21,6 @@ router.get("/scores/:employeeId", async (req, res) => {
             return res.status(404).json({ message: "No scores found for this employee" });
         }
 
-        // Log fetched scores for debugging
-        // console.log("Fetched Scores: ", scores);
-
         // Format response
         const result = scores.map((score) => ({
             learningMaterialTitle: score.quizId ? score.quizId.learningMaterial?.title : "N/A", // Handle missing quizId or learningMaterial
@@ -31,9 +28,6 @@ router.get("/scores/:employeeId", async (req, res) => {
             timeSpent: score.timeSpent,
         }));
         
-
-        // Log formatted response for debugging
-        // console.log("Formatted Result: ", result);
 
         res.json(result);
     } catch (error) {
