@@ -201,10 +201,10 @@ const AdminDashboard = () => {
         }
     });
 
-    // Get current employees
-    const indexOfLastEmployee = currentPage * 5;
-    const indexOfFirstEmployee = indexOfLastEmployee - 5;
-    const currentEmployees = employees.slice(indexOfFirstEmployee, indexOfLastEmployee);
+    // // Get current employees
+    // const indexOfLastEmployee = currentPage * 5;
+    // const indexOfFirstEmployee = indexOfLastEmployee - 5;
+    // // const currentEmployees = employees.slice(indexOfFirstEmployee, indexOfLastEmployee);
     
 
     
@@ -296,31 +296,34 @@ const AdminDashboard = () => {
 
             {view === "createEmployee" && (
                 <div className="row mt-4">
-                    <div className="col-md-8 offset-md-2">
-                        <h3 className="text-center">Existing Employees</h3>
-                        <input
-                            type="text"
-                            placeholder="Search by Employee Name or Email"
-                            className="form-control mb-3"
-                            value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
-                        />
-                        <table className="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Employee ID</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Team</th>
-                                    <th>Department</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {currentEmployees.filter((employee) => 
+                <div className="col-md-8 offset-md-2">
+                    <h3 className="text-center">Existing Employees</h3>
+                    <input
+                        type="text"
+                        placeholder="Search by Employee Name or Email"
+                        className="form-control mb-3"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                    />
+                    <table className="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Employee ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Team</th>
+                                <th>Department</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {employees
+                                .filter((employee) =>
                                     employee.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                                     employee.email.toLowerCase().includes(searchQuery.toLowerCase())
-                                ).map((employee) => (
+                                )
+                                .slice((currentPage - 1) * 5, currentPage * 5)  // Paginate after filtering
+                                .map((employee) => (
                                     <tr key={employee.employeeId}>
                                         <td>{employee.employeeId}</td>
                                         <td>{employee.name}</td>
@@ -333,17 +336,22 @@ const AdminDashboard = () => {
                                         </td>
                                     </tr>
                                 ))}
-                            </tbody>
-                        </table>
-                        <div className="pagination">
-                            {[...Array(Math.ceil(employees.length / 5)).keys()].map((pageNumber) => (
-                                <button key={pageNumber} onClick={() => paginate(pageNumber + 1)} className={`page-item ${currentPage === pageNumber + 1 ? 'active' : ''}`}>
-                                    {pageNumber + 1}
-                                </button>
-                            ))}
-                        </div>
+                        </tbody>
+                    </table>
+                    <div className="pagination">
+                        {[...Array(Math.ceil(
+                            employees.filter((employee) =>
+                                employee.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                                employee.email.toLowerCase().includes(searchQuery.toLowerCase())
+                            ).length / 5)).keys()].map((pageNumber) => (
+                            <button key={pageNumber} onClick={() => paginate(pageNumber + 1)} className={`page-item ${currentPage === pageNumber + 1 ? 'active' : ''}`}>
+                                {pageNumber + 1}
+                            </button>
+                        ))}
                     </div>
                 </div>
+            </div>
+            
             )}
 
             {view === "learningMaterials" && (
